@@ -1,9 +1,0 @@
-# Development convenience aliases — activate set + stack by default.
-# The published crate default is still no_std + zero deps; users who
-# want the minimal build use `--no-default-features` (the crate-level
-# `default` feature list is empty on purpose).
-
-[alias]
-c = "check --features 'stack,parallel'"
-t = "test --features 'stack,parallel'"
-b = "build --features 'stack,parallel'"
