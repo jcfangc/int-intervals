@@ -10,8 +10,24 @@
 A `no_std`-friendly closed-open integer interval algebra, canonical interval-set
 containers, and overlap-stack structures.
 
-This crate consolidates and supersedes [`int-interval`][], [`int-interval-set`][],
-and [`int-interval-stack`][].
+---
+
+## History
+
+This crate consolidates and supersedes three previously independent crates:
+
+| Predecessor | Final version | Merged into |
+|------------|--------------|-------------|
+| [`int-interval`][] | 0.9.6 | `int_intervals::interval` (always available) |
+| [`int-interval-set`][] | 0.3.4 | `int_intervals::set` (feature `"set"`) |
+| [`int-interval-stack`][] | 0.3.1 | `int_intervals::stack` (feature `"stack"`) |
+
+The three crates formed a dependency chain — `stack` depended on `set`, which
+depended on `interval`. Maintaining them separately meant synchronising versions,
+duplicating CI workflows, and publishing across three repos. Merging them into a
+single crate with feature gates simplifies maintenance while keeping the same
+`no_std`-first posture: without any features, `int-intervals` compiles against
+`core` alone.
 
 [`int-interval`]: https://crates.io/crates/int-interval
 [`int-interval-set`]: https://crates.io/crates/int-interval-set
