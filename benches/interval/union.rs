@@ -8,7 +8,7 @@ fn main() {
 
 const BASE: (i8, i8) = (-32, 96);
 
-#[divan::bench(name = "union/equal/int_interval")]
+#[divan::bench(name = "union/equal/ours_interval")]
 fn union_int_interval_equal(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 96));
 }
@@ -18,7 +18,7 @@ fn union_rust_intervals_equal(bencher: Bencher) {
     bench_rust_intervals(bencher, (-32, 96));
 }
 
-#[divan::bench(name = "union/contained/int_interval")]
+#[divan::bench(name = "union/contained/ours_interval")]
 fn union_int_interval_contained(bencher: Bencher) {
     bench_int_interval(bencher, (-16, 32));
 }
@@ -28,7 +28,7 @@ fn union_rust_intervals_contained(bencher: Bencher) {
     bench_rust_intervals(bencher, (-16, 32));
 }
 
-#[divan::bench(name = "union/contains_base/int_interval")]
+#[divan::bench(name = "union/contains_base/ours_interval")]
 fn union_int_interval_contains_base(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 112));
 }
@@ -38,7 +38,7 @@ fn union_rust_intervals_contains_base(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 112));
 }
 
-#[divan::bench(name = "union/overlap_left/int_interval")]
+#[divan::bench(name = "union/overlap_left/ours_interval")]
 fn union_int_interval_overlap_left(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 0));
 }
@@ -48,7 +48,7 @@ fn union_rust_intervals_overlap_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 0));
 }
 
-#[divan::bench(name = "union/overlap_right/int_interval")]
+#[divan::bench(name = "union/overlap_right/ours_interval")]
 fn union_int_interval_overlap_right(bencher: Bencher) {
     bench_int_interval(bencher, (32, 112));
 }
@@ -58,7 +58,7 @@ fn union_rust_intervals_overlap_right(bencher: Bencher) {
     bench_rust_intervals(bencher, (32, 112));
 }
 
-#[divan::bench(name = "union/adjacent_left/int_interval")]
+#[divan::bench(name = "union/adjacent_left/ours_interval")]
 fn union_int_interval_adjacent_left(bencher: Bencher) {
     bench_int_interval(bencher, (-64, -32));
 }
@@ -68,7 +68,7 @@ fn union_rust_intervals_adjacent_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, -32));
 }
 
-#[divan::bench(name = "union/adjacent_right/int_interval")]
+#[divan::bench(name = "union/adjacent_right/ours_interval")]
 fn union_int_interval_adjacent_right(bencher: Bencher) {
     bench_int_interval(bencher, (96, 112));
 }

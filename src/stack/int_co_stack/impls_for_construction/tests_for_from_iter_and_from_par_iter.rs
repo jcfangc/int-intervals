@@ -1,6 +1,5 @@
 use alloc::vec;
 
-use alloc::vec::Vec;
 // int_co_stack/impls_for_construction/tests_for_from_iter_and_from_par_iter.rs
 use super::*;
 use crate::interval::I32CO;

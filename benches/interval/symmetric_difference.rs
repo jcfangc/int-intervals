@@ -8,7 +8,7 @@ fn main() {
 
 const BASE: (i8, i8) = (-32, 96);
 
-#[divan::bench(name = "symmetric_difference/equal/int_interval")]
+#[divan::bench(name = "symmetric_difference/equal/ours_interval")]
 fn symmetric_difference_int_interval_equal(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 96));
 }
@@ -18,7 +18,7 @@ fn symmetric_difference_rust_intervals_equal(bencher: Bencher) {
     bench_rust_intervals(bencher, (-32, 96));
 }
 
-#[divan::bench(name = "symmetric_difference/same_left/int_interval")]
+#[divan::bench(name = "symmetric_difference/same_left/ours_interval")]
 fn symmetric_difference_int_interval_same_left(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 32));
 }
@@ -28,7 +28,7 @@ fn symmetric_difference_rust_intervals_same_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-32, 32));
 }
 
-#[divan::bench(name = "symmetric_difference/same_right/int_interval")]
+#[divan::bench(name = "symmetric_difference/same_right/ours_interval")]
 fn symmetric_difference_int_interval_same_right(bencher: Bencher) {
     bench_int_interval(bencher, (32, 96));
 }
@@ -38,7 +38,7 @@ fn symmetric_difference_rust_intervals_same_right(bencher: Bencher) {
     bench_rust_intervals(bencher, (32, 96));
 }
 
-#[divan::bench(name = "symmetric_difference/contained_strict/int_interval")]
+#[divan::bench(name = "symmetric_difference/contained_strict/ours_interval")]
 fn symmetric_difference_int_interval_contained_strict(bencher: Bencher) {
     bench_int_interval(bencher, (-16, 32));
 }
@@ -48,7 +48,7 @@ fn symmetric_difference_rust_intervals_contained_strict(bencher: Bencher) {
     bench_rust_intervals(bencher, (-16, 32));
 }
 
-#[divan::bench(name = "symmetric_difference/contains_base/int_interval")]
+#[divan::bench(name = "symmetric_difference/contains_base/ours_interval")]
 fn symmetric_difference_int_interval_contains_base(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 112));
 }
@@ -58,7 +58,7 @@ fn symmetric_difference_rust_intervals_contains_base(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 112));
 }
 
-#[divan::bench(name = "symmetric_difference/overlap_left/int_interval")]
+#[divan::bench(name = "symmetric_difference/overlap_left/ours_interval")]
 fn symmetric_difference_int_interval_overlap_left(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 0));
 }
@@ -68,7 +68,7 @@ fn symmetric_difference_rust_intervals_overlap_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 0));
 }
 
-#[divan::bench(name = "symmetric_difference/overlap_right/int_interval")]
+#[divan::bench(name = "symmetric_difference/overlap_right/ours_interval")]
 fn symmetric_difference_int_interval_overlap_right(bencher: Bencher) {
     bench_int_interval(bencher, (32, 112));
 }
@@ -78,7 +78,7 @@ fn symmetric_difference_rust_intervals_overlap_right(bencher: Bencher) {
     bench_rust_intervals(bencher, (32, 112));
 }
 
-#[divan::bench(name = "symmetric_difference/adjacent_left/int_interval")]
+#[divan::bench(name = "symmetric_difference/adjacent_left/ours_interval")]
 fn symmetric_difference_int_interval_adjacent_left(bencher: Bencher) {
     bench_int_interval(bencher, (-64, -32));
 }
@@ -88,7 +88,7 @@ fn symmetric_difference_rust_intervals_adjacent_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, -32));
 }
 
-#[divan::bench(name = "symmetric_difference/adjacent_right/int_interval")]
+#[divan::bench(name = "symmetric_difference/adjacent_right/ours_interval")]
 fn symmetric_difference_int_interval_adjacent_right(bencher: Bencher) {
     bench_int_interval(bencher, (96, 112));
 }
@@ -98,7 +98,7 @@ fn symmetric_difference_rust_intervals_adjacent_right(bencher: Bencher) {
     bench_rust_intervals(bencher, (96, 112));
 }
 
-#[divan::bench(name = "symmetric_difference/disjoint_left/int_interval")]
+#[divan::bench(name = "symmetric_difference/disjoint_left/ours_interval")]
 fn symmetric_difference_int_interval_disjoint_left(bencher: Bencher) {
     bench_int_interval(bencher, (-96, -64));
 }
@@ -108,7 +108,7 @@ fn symmetric_difference_rust_intervals_disjoint_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-96, -64));
 }
 
-#[divan::bench(name = "symmetric_difference/disjoint_right/int_interval")]
+#[divan::bench(name = "symmetric_difference/disjoint_right/ours_interval")]
 fn symmetric_difference_int_interval_disjoint_right(bencher: Bencher) {
     bench_int_interval(bencher, (112, 127));
 }

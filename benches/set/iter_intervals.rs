@@ -13,7 +13,7 @@ type Bounds = (i32, i32);
 const N_SMALL: usize = 64;
 const N_LARGE: usize = 1024;
 
-#[divan::bench(name = "iter_intervals/merged_64_to_1/int_interval_set")]
+#[divan::bench(name = "iter_intervals/merged_64_to_1/ours_set")]
 fn iter_intervals_merged_64_to_1_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &adjacent_bounds(N_SMALL));
 }
@@ -28,7 +28,7 @@ fn iter_intervals_merged_64_to_1_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, &adjacent_bounds(N_SMALL));
 }
 
-#[divan::bench(name = "iter_intervals/sparse_64/int_interval_set")]
+#[divan::bench(name = "iter_intervals/sparse_64/ours_set")]
 fn iter_intervals_sparse_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &sparse_bounds(N_SMALL));
 }
@@ -43,7 +43,7 @@ fn iter_intervals_sparse_64_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, &sparse_bounds(N_SMALL));
 }
 
-#[divan::bench(name = "iter_intervals/sparse_1024/int_interval_set")]
+#[divan::bench(name = "iter_intervals/sparse_1024/ours_set")]
 fn iter_intervals_sparse_1024_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &sparse_bounds(N_LARGE));
 }

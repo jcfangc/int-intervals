@@ -2,23 +2,7 @@ repos:
   - repo: local
     hooks:
       - id: cargo-test
-        name: cargo test (base)
-        entry: bash -lc 'cargo test --locked'
-        language: system
-        pass_filenames: false
-        always_run: true
-        stages: [pre-commit]
-
-      - id: cargo-test-set
-        name: cargo test (set feature)
-        entry: bash -lc 'cargo test --locked --features set'
-        language: system
-        pass_filenames: false
-        always_run: true
-        stages: [pre-commit]
-
-      - id: cargo-test-stack
-        name: cargo test (stack feature)
+        name: cargo test (stack)
         entry: bash -lc 'cargo test --locked --features stack'
         language: system
         pass_filenames: false

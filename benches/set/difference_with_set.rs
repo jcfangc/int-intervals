@@ -12,7 +12,7 @@ type Bounds = (i32, i32);
 
 const N: usize = 64;
 
-#[divan::bench(name = "difference_with_set/interleaved_disjoint_64/int_interval_set")]
+#[divan::bench(name = "difference_with_set/interleaved_disjoint_64/ours_set")]
 fn difference_with_set_interleaved_disjoint_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &interleaved_disjoint());
 }
@@ -27,7 +27,7 @@ fn difference_with_set_interleaved_disjoint_64_range_collections(bencher: Benche
     bench_range_collections(bencher, &interleaved_disjoint());
 }
 
-#[divan::bench(name = "difference_with_set/equal_64/int_interval_set")]
+#[divan::bench(name = "difference_with_set/equal_64/ours_set")]
 fn difference_with_set_equal_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &equal());
 }
@@ -42,7 +42,7 @@ fn difference_with_set_equal_64_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, &equal());
 }
 
-#[divan::bench(name = "difference_with_set/trim_right_64/int_interval_set")]
+#[divan::bench(name = "difference_with_set/trim_right_64/ours_set")]
 fn difference_with_set_trim_right_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &trim_right());
 }
@@ -57,7 +57,7 @@ fn difference_with_set_trim_right_64_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, &trim_right());
 }
 
-#[divan::bench(name = "difference_with_set/punch_middle_64/int_interval_set")]
+#[divan::bench(name = "difference_with_set/punch_middle_64/ours_set")]
 fn difference_with_set_punch_middle_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &punch_middle());
 }

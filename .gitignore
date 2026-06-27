@@ -1,2 +1,4 @@
 /target
 /proptest-regressions
+__pycache__/
+.vscode/

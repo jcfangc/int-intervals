@@ -10,42 +10,42 @@ type Bounds = (i32, i32);
 
 const N: usize = 64;
 
-#[divan::bench(name = "interval_containing_point/hit_first/int_interval_set")]
+#[divan::bench(name = "interval_containing_point/hit_first/ours_set")]
 fn interval_containing_point_hit_first_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 1);
 }
 
-#[divan::bench(name = "interval_containing_point/gap_first/int_interval_set")]
+#[divan::bench(name = "interval_containing_point/gap_first/ours_set")]
 fn interval_containing_point_gap_first_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 2);
 }
 
-#[divan::bench(name = "interval_containing_point/hit_middle/int_interval_set")]
+#[divan::bench(name = "interval_containing_point/hit_middle/ours_set")]
 fn interval_containing_point_hit_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 129);
 }
 
-#[divan::bench(name = "interval_containing_point/gap_middle/int_interval_set")]
+#[divan::bench(name = "interval_containing_point/gap_middle/ours_set")]
 fn interval_containing_point_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 130);
 }
 
-#[divan::bench(name = "interval_containing_point/hit_last/int_interval_set")]
+#[divan::bench(name = "interval_containing_point/hit_last/ours_set")]
 fn interval_containing_point_hit_last_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 253);
 }
 
-#[divan::bench(name = "interval_containing_point/gap_last/int_interval_set")]
+#[divan::bench(name = "interval_containing_point/gap_last/ours_set")]
 fn interval_containing_point_gap_last_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 254);
 }
 
-#[divan::bench(name = "interval_containing_point/before_all/int_interval_set")]
+#[divan::bench(name = "interval_containing_point/before_all/ours_set")]
 fn interval_containing_point_before_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, -1);
 }
 
-#[divan::bench(name = "interval_containing_point/after_all/int_interval_set")]
+#[divan::bench(name = "interval_containing_point/after_all/ours_set")]
 fn interval_containing_point_after_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 256);
 }

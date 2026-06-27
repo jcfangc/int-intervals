@@ -12,7 +12,7 @@ type Bounds = (i32, i32);
 
 const INTERVAL_COUNT: i32 = 64;
 
-#[divan::bench(name = "intersection_with_interval/disjoint_left/int_interval_set")]
+#[divan::bench(name = "intersection_with_interval/disjoint_left/ours_set")]
 fn intersection_with_interval_disjoint_left_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-32, -16));
 }
@@ -27,7 +27,7 @@ fn intersection_with_interval_disjoint_left_range_collections(bencher: Bencher) 
     bench_range_collections(bencher, (-32, -16));
 }
 
-#[divan::bench(name = "intersection_with_interval/inside_gap_middle/int_interval_set")]
+#[divan::bench(name = "intersection_with_interval/inside_gap_middle/ours_set")]
 fn intersection_with_interval_inside_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (509, 511));
 }
@@ -42,7 +42,7 @@ fn intersection_with_interval_inside_gap_middle_range_collections(bencher: Bench
     bench_range_collections(bencher, (509, 511));
 }
 
-#[divan::bench(name = "intersection_with_interval/contained_middle/int_interval_set")]
+#[divan::bench(name = "intersection_with_interval/contained_middle/ours_set")]
 fn intersection_with_interval_contained_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (514, 522));
 }
@@ -57,7 +57,7 @@ fn intersection_with_interval_contained_middle_range_collections(bencher: Benche
     bench_range_collections(bencher, (514, 522));
 }
 
-#[divan::bench(name = "intersection_with_interval/crosses_gap_middle/int_interval_set")]
+#[divan::bench(name = "intersection_with_interval/crosses_gap_middle/ours_set")]
 fn intersection_with_interval_crosses_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (504, 520));
 }
@@ -72,7 +72,7 @@ fn intersection_with_interval_crosses_gap_middle_range_collections(bencher: Benc
     bench_range_collections(bencher, (504, 520));
 }
 
-#[divan::bench(name = "intersection_with_interval/covers_middle_16/int_interval_set")]
+#[divan::bench(name = "intersection_with_interval/covers_middle_16/ours_set")]
 fn intersection_with_interval_covers_middle_16_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (384, 636));
 }
@@ -87,7 +87,7 @@ fn intersection_with_interval_covers_middle_16_range_collections(bencher: Benche
     bench_range_collections(bencher, (384, 636));
 }
 
-#[divan::bench(name = "intersection_with_interval/covers_all/int_interval_set")]
+#[divan::bench(name = "intersection_with_interval/covers_all/ours_set")]
 fn intersection_with_interval_covers_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-16, 1032));
 }

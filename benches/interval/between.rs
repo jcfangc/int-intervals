@@ -8,7 +8,7 @@ fn main() {
 
 const BASE: (i8, i8) = (-32, 96);
 
-#[divan::bench(name = "between/gap_left/int_interval")]
+#[divan::bench(name = "between/gap_left/ours_interval")]
 fn between_gap_left_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-96, -64));
 }
@@ -18,7 +18,7 @@ fn between_gap_left_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-96, -64));
 }
 
-#[divan::bench(name = "between/gap_right/int_interval")]
+#[divan::bench(name = "between/gap_right/ours_interval")]
 fn between_gap_right_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (112, 127));
 }
@@ -28,7 +28,7 @@ fn between_gap_right_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (112, 127));
 }
 
-#[divan::bench(name = "between/adjacent_left/int_interval")]
+#[divan::bench(name = "between/adjacent_left/ours_interval")]
 fn between_adjacent_left_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-64, -32));
 }
@@ -38,7 +38,7 @@ fn between_adjacent_left_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, -32));
 }
 
-#[divan::bench(name = "between/adjacent_right/int_interval")]
+#[divan::bench(name = "between/adjacent_right/ours_interval")]
 fn between_adjacent_right_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (96, 112));
 }
@@ -48,7 +48,7 @@ fn between_adjacent_right_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (96, 112));
 }
 
-#[divan::bench(name = "between/overlap_left/int_interval")]
+#[divan::bench(name = "between/overlap_left/ours_interval")]
 fn between_overlap_left_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 0));
 }
@@ -58,7 +58,7 @@ fn between_overlap_left_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 0));
 }
 
-#[divan::bench(name = "between/overlap_right/int_interval")]
+#[divan::bench(name = "between/overlap_right/ours_interval")]
 fn between_overlap_right_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (32, 112));
 }
@@ -68,7 +68,7 @@ fn between_overlap_right_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (32, 112));
 }
 
-#[divan::bench(name = "between/contained/int_interval")]
+#[divan::bench(name = "between/contained/ours_interval")]
 fn between_contained_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-16, 32));
 }
@@ -78,7 +78,7 @@ fn between_contained_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-16, 32));
 }
 
-#[divan::bench(name = "between/equal/int_interval")]
+#[divan::bench(name = "between/equal/ours_interval")]
 fn between_equal_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 96));
 }

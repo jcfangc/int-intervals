@@ -8,7 +8,7 @@ fn main() {
 
 const BASE: (i8, i8) = (-32, 96);
 
-#[divan::bench(name = "intersects/equal/int_interval")]
+#[divan::bench(name = "intersects/equal/ours_interval")]
 fn intersects_int_interval_equal(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 96));
 }
@@ -18,7 +18,7 @@ fn intersects_rust_intervals_equal(bencher: Bencher) {
     bench_rust_intervals(bencher, (-32, 96));
 }
 
-#[divan::bench(name = "intersects/contained/int_interval")]
+#[divan::bench(name = "intersects/contained/ours_interval")]
 fn intersects_int_interval_contained(bencher: Bencher) {
     bench_int_interval(bencher, (-16, 32));
 }
@@ -28,7 +28,7 @@ fn intersects_rust_intervals_contained(bencher: Bencher) {
     bench_rust_intervals(bencher, (-16, 32));
 }
 
-#[divan::bench(name = "intersects/overlap_left/int_interval")]
+#[divan::bench(name = "intersects/overlap_left/ours_interval")]
 fn intersects_int_interval_overlap_left(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 0));
 }
@@ -38,7 +38,7 @@ fn intersects_rust_intervals_overlap_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 0));
 }
 
-#[divan::bench(name = "intersects/overlap_right/int_interval")]
+#[divan::bench(name = "intersects/overlap_right/ours_interval")]
 fn intersects_int_interval_overlap_right(bencher: Bencher) {
     bench_int_interval(bencher, (32, 112));
 }
@@ -48,7 +48,7 @@ fn intersects_rust_intervals_overlap_right(bencher: Bencher) {
     bench_rust_intervals(bencher, (32, 112));
 }
 
-#[divan::bench(name = "intersects/adjacent_left/int_interval")]
+#[divan::bench(name = "intersects/adjacent_left/ours_interval")]
 fn intersects_int_interval_adjacent_left(bencher: Bencher) {
     bench_int_interval(bencher, (-64, -32));
 }
@@ -58,7 +58,7 @@ fn intersects_rust_intervals_adjacent_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, -32));
 }
 
-#[divan::bench(name = "intersects/adjacent_right/int_interval")]
+#[divan::bench(name = "intersects/adjacent_right/ours_interval")]
 fn intersects_int_interval_adjacent_right(bencher: Bencher) {
     bench_int_interval(bencher, (96, 112));
 }
@@ -68,7 +68,7 @@ fn intersects_rust_intervals_adjacent_right(bencher: Bencher) {
     bench_rust_intervals(bencher, (96, 112));
 }
 
-#[divan::bench(name = "intersects/disjoint_left/int_interval")]
+#[divan::bench(name = "intersects/disjoint_left/ours_interval")]
 fn intersects_int_interval_disjoint_left(bencher: Bencher) {
     bench_int_interval(bencher, (-96, -64));
 }
@@ -78,7 +78,7 @@ fn intersects_rust_intervals_disjoint_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-96, -64));
 }
 
-#[divan::bench(name = "intersects/disjoint_right/int_interval")]
+#[divan::bench(name = "intersects/disjoint_right/ours_interval")]
 fn intersects_int_interval_disjoint_right(bencher: Bencher) {
     bench_int_interval(bencher, (112, 127));
 }
