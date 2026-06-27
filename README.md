@@ -3,6 +3,9 @@
 [![Crates.io](https://img.shields.io/crates/v/int-intervals.svg)](https://crates.io/crates/int-intervals)
 [![Documentation](https://docs.rs/int-intervals/badge.svg)](https://docs.rs/int-intervals)
 [![License](https://img.shields.io/crates/l/int-intervals.svg)](https://crates.io/crates/int-intervals)
+[![CI](https://github.com/jcfangc/int-intervals/actions/workflows/gate.yml/badge.svg)](https://github.com/jcfangc/int-intervals/actions/workflows/gate.yml)
+[![CodSpeed](https://github.com/jcfangc/int-intervals/actions/workflows/codspeed.yml/badge.svg)](https://github.com/jcfangc/int-intervals/actions/workflows/codspeed.yml)
+[![Coverage](https://codecov.io/gh/jcfangc/int-intervals/branch/main/graph/badge.svg)](https://codecov.io/gh/jcfangc/int-intervals)
 
 A `no_std`-friendly closed-open integer interval algebra, canonical interval-set
 containers, and overlap-stack structures.
