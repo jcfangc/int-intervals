@@ -12,7 +12,7 @@ type Bounds = (i32, i32);
 
 const N: i32 = 64;
 
-#[divan::bench(name = "union_with_set/equal_64/ours")]
+#[divan::bench(name = "union_with_set/equal_64/ours_set")]
 fn union_with_set_equal_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &equal_rhs());
 }
@@ -27,7 +27,7 @@ fn union_with_set_equal_64_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, &lhs_bounds(), &equal_rhs());
 }
 
-#[divan::bench(name = "union_with_set/contained_64/ours")]
+#[divan::bench(name = "union_with_set/contained_64/ours_set")]
 fn union_with_set_contained_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &contained_rhs());
 }
@@ -42,7 +42,7 @@ fn union_with_set_contained_64_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, &lhs_bounds(), &contained_rhs());
 }
 
-#[divan::bench(name = "union_with_set/overlapping_64/ours")]
+#[divan::bench(name = "union_with_set/overlapping_64/ours_set")]
 fn union_with_set_overlapping_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &overlapping_rhs());
 }
@@ -57,7 +57,7 @@ fn union_with_set_overlapping_64_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, &lhs_bounds(), &overlapping_rhs());
 }
 
-#[divan::bench(name = "union_with_set/interleaved_disjoint_64/ours")]
+#[divan::bench(name = "union_with_set/interleaved_disjoint_64/ours_set")]
 fn union_with_set_interleaved_disjoint_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &interleaved_disjoint_rhs());
 }
@@ -72,7 +72,7 @@ fn union_with_set_interleaved_disjoint_64_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, &lhs_bounds(), &interleaved_disjoint_rhs());
 }
 
-#[divan::bench(name = "union_with_set/adjacent_bridge_64/ours")]
+#[divan::bench(name = "union_with_set/adjacent_bridge_64/ours_set")]
 fn union_with_set_adjacent_bridge_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &adjacent_bridge_rhs());
 }

@@ -9,7 +9,7 @@ fn main() {
 const START: i8 = -32;
 const END_EXCL: i8 = 96;
 
-#[divan::bench(name = "contains/hit_start/ours")]
+#[divan::bench(name = "contains/hit_start/ours_interval")]
 fn contains_hit_start_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, START);
 }
@@ -24,7 +24,7 @@ fn contains_hit_start_std_range(bencher: Bencher) {
     bench_std_range(bencher, START);
 }
 
-#[divan::bench(name = "contains/hit_middle/ours")]
+#[divan::bench(name = "contains/hit_middle/ours_interval")]
 fn contains_hit_middle_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, 16);
 }
@@ -39,7 +39,7 @@ fn contains_hit_middle_std_range(bencher: Bencher) {
     bench_std_range(bencher, 16);
 }
 
-#[divan::bench(name = "contains/hit_end_incl/ours")]
+#[divan::bench(name = "contains/hit_end_incl/ours_interval")]
 fn contains_hit_end_incl_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, END_EXCL - 1);
 }
@@ -54,7 +54,7 @@ fn contains_hit_end_incl_std_range(bencher: Bencher) {
     bench_std_range(bencher, END_EXCL - 1);
 }
 
-#[divan::bench(name = "contains/miss_before/ours")]
+#[divan::bench(name = "contains/miss_before/ours_interval")]
 fn contains_miss_before_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, START - 1);
 }
@@ -69,7 +69,7 @@ fn contains_miss_before_std_range(bencher: Bencher) {
     bench_std_range(bencher, START - 1);
 }
 
-#[divan::bench(name = "contains/miss_end_excl/ours")]
+#[divan::bench(name = "contains/miss_end_excl/ours_interval")]
 fn contains_miss_end_excl_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, END_EXCL);
 }

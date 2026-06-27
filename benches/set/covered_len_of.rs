@@ -10,32 +10,32 @@ type Bounds = (i32, i32);
 
 const N: usize = 64;
 
-#[divan::bench(name = "covered_len_of/disjoint_before/ours")]
+#[divan::bench(name = "covered_len_of/disjoint_before/ours_set")]
 fn covered_len_of_disjoint_before_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-32, -16));
 }
 
-#[divan::bench(name = "covered_len_of/adjacent_before_first/ours")]
+#[divan::bench(name = "covered_len_of/adjacent_before_first/ours_set")]
 fn covered_len_of_adjacent_before_first_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-8, 0));
 }
 
-#[divan::bench(name = "covered_len_of/contained_single/ours")]
+#[divan::bench(name = "covered_len_of/contained_single/ours_set")]
 fn covered_len_of_contained_single_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (258, 262));
 }
 
-#[divan::bench(name = "covered_len_of/span_single_and_gap/ours")]
+#[divan::bench(name = "covered_len_of/span_single_and_gap/ours_set")]
 fn covered_len_of_span_single_and_gap_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (258, 274));
 }
 
-#[divan::bench(name = "covered_len_of/span_many_middle/ours")]
+#[divan::bench(name = "covered_len_of/span_many_middle/ours_set")]
 fn covered_len_of_span_many_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (250, 582));
 }
 
-#[divan::bench(name = "covered_len_of/cover_all/ours")]
+#[divan::bench(name = "covered_len_of/cover_all/ours_set")]
 fn covered_len_of_cover_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-16, 1032));
 }

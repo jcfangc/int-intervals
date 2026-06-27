@@ -11,7 +11,7 @@ type Bounds = (i32, i32);
 
 const INTERVAL_COUNT: i32 = 64;
 
-#[divan::bench(name = "intervals_intersecting/disjoint_left/ours")]
+#[divan::bench(name = "intervals_intersecting/disjoint_left/ours_set")]
 fn intervals_intersecting_disjoint_left_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-32, -16));
 }
@@ -21,7 +21,7 @@ fn intervals_intersecting_disjoint_left_rangemap(bencher: Bencher) {
     bench_rangemap(bencher, (-32, -16));
 }
 
-#[divan::bench(name = "intervals_intersecting/contained_middle/ours")]
+#[divan::bench(name = "intervals_intersecting/contained_middle/ours_set")]
 fn intervals_intersecting_contained_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (514, 522));
 }
@@ -31,7 +31,7 @@ fn intervals_intersecting_contained_middle_rangemap(bencher: Bencher) {
     bench_rangemap(bencher, (514, 522));
 }
 
-#[divan::bench(name = "intervals_intersecting/crosses_gap_middle/ours")]
+#[divan::bench(name = "intervals_intersecting/crosses_gap_middle/ours_set")]
 fn intervals_intersecting_crosses_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (520, 530));
 }
@@ -41,7 +41,7 @@ fn intervals_intersecting_crosses_gap_middle_rangemap(bencher: Bencher) {
     bench_rangemap(bencher, (520, 530));
 }
 
-#[divan::bench(name = "intervals_intersecting/covers_middle_16/ours")]
+#[divan::bench(name = "intervals_intersecting/covers_middle_16/ours_set")]
 fn intervals_intersecting_covers_middle_16_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (384, 636));
 }
@@ -51,7 +51,7 @@ fn intervals_intersecting_covers_middle_16_rangemap(bencher: Bencher) {
     bench_rangemap(bencher, (384, 636));
 }
 
-#[divan::bench(name = "intervals_intersecting/covers_all/ours")]
+#[divan::bench(name = "intervals_intersecting/covers_all/ours_set")]
 fn intervals_intersecting_covers_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-16, 1032));
 }

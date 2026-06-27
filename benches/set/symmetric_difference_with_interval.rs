@@ -12,7 +12,7 @@ type Bounds = (i32, i32);
 
 const INTERVAL_COUNT: i32 = 64;
 
-#[divan::bench(name = "symmetric_difference_with_interval/disjoint_left/ours")]
+#[divan::bench(name = "symmetric_difference_with_interval/disjoint_left/ours_set")]
 fn symmetric_difference_with_interval_disjoint_left_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-32, -16));
 }
@@ -27,7 +27,7 @@ fn symmetric_difference_with_interval_disjoint_left_range_collections(bencher: B
     bench_range_collections(bencher, (-32, -16));
 }
 
-#[divan::bench(name = "symmetric_difference_with_interval/equal_middle/ours")]
+#[divan::bench(name = "symmetric_difference_with_interval/equal_middle/ours_set")]
 fn symmetric_difference_with_interval_equal_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (512, 524));
 }
@@ -42,7 +42,7 @@ fn symmetric_difference_with_interval_equal_middle_range_collections(bencher: Be
     bench_range_collections(bencher, (512, 524));
 }
 
-#[divan::bench(name = "symmetric_difference_with_interval/contained_middle/ours")]
+#[divan::bench(name = "symmetric_difference_with_interval/contained_middle/ours_set")]
 fn symmetric_difference_with_interval_contained_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (514, 522));
 }
@@ -57,7 +57,7 @@ fn symmetric_difference_with_interval_contained_middle_range_collections(bencher
     bench_range_collections(bencher, (514, 522));
 }
 
-#[divan::bench(name = "symmetric_difference_with_interval/crosses_gap_middle/ours")]
+#[divan::bench(name = "symmetric_difference_with_interval/crosses_gap_middle/ours_set")]
 fn symmetric_difference_with_interval_crosses_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (520, 530));
 }
@@ -72,7 +72,7 @@ fn symmetric_difference_with_interval_crosses_gap_middle_range_collections(bench
     bench_range_collections(bencher, (520, 530));
 }
 
-#[divan::bench(name = "symmetric_difference_with_interval/covers_middle_16/ours")]
+#[divan::bench(name = "symmetric_difference_with_interval/covers_middle_16/ours_set")]
 fn symmetric_difference_with_interval_covers_middle_16_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (384, 636));
 }
@@ -87,7 +87,7 @@ fn symmetric_difference_with_interval_covers_middle_16_range_collections(bencher
     bench_range_collections(bencher, (384, 636));
 }
 
-#[divan::bench(name = "symmetric_difference_with_interval/covers_all/ours")]
+#[divan::bench(name = "symmetric_difference_with_interval/covers_all/ours_set")]
 fn symmetric_difference_with_interval_covers_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-16, 1032));
 }

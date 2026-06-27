@@ -10,32 +10,32 @@ type Bounds = (i32, i32);
 
 const INTERVAL_COUNT: i32 = 64;
 
-#[divan::bench(name = "coverage_ratio_f32_of/uncovered_gap/ours")]
+#[divan::bench(name = "coverage_ratio_f32_of/uncovered_gap/ours_set")]
 fn coverage_ratio_f32_of_uncovered_gap_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (524, 528));
 }
 
-#[divan::bench(name = "coverage_ratio_f32_of/fully_covered_middle/ours")]
+#[divan::bench(name = "coverage_ratio_f32_of/fully_covered_middle/ours_set")]
 fn coverage_ratio_f32_of_fully_covered_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (514, 522));
 }
 
-#[divan::bench(name = "coverage_ratio_f32_of/crosses_gap_middle/ours")]
+#[divan::bench(name = "coverage_ratio_f32_of/crosses_gap_middle/ours_set")]
 fn coverage_ratio_f32_of_crosses_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (520, 530));
 }
 
-#[divan::bench(name = "coverage_ratio_f32_of/covers_middle_16/ours")]
+#[divan::bench(name = "coverage_ratio_f32_of/covers_middle_16/ours_set")]
 fn coverage_ratio_f32_of_covers_middle_16_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (384, 640));
 }
 
-#[divan::bench(name = "coverage_ratio_f32_of/covers_all_span/ours")]
+#[divan::bench(name = "coverage_ratio_f32_of/covers_all_span/ours_set")]
 fn coverage_ratio_f32_of_covers_all_span_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (0, 1020));
 }
 
-#[divan::bench(name = "coverage_ratio_f32_of/mostly_outside/ours")]
+#[divan::bench(name = "coverage_ratio_f32_of/mostly_outside/ours_set")]
 fn coverage_ratio_f32_of_mostly_outside_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-512, 1536));
 }

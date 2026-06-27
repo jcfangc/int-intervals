@@ -8,7 +8,7 @@ fn main() {
 
 const BASE: (i8, i8) = (-32, 96);
 
-#[divan::bench(name = "convex_hull/equal/ours")]
+#[divan::bench(name = "convex_hull/equal/ours_interval")]
 fn convex_hull_int_interval_equal(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 96));
 }
@@ -18,7 +18,7 @@ fn convex_hull_rust_intervals_equal(bencher: Bencher) {
     bench_rust_intervals(bencher, (-32, 96));
 }
 
-#[divan::bench(name = "convex_hull/other_contained/ours")]
+#[divan::bench(name = "convex_hull/other_contained/ours_interval")]
 fn convex_hull_int_interval_other_contained(bencher: Bencher) {
     bench_int_interval(bencher, (-16, 32));
 }
@@ -28,7 +28,7 @@ fn convex_hull_rust_intervals_other_contained(bencher: Bencher) {
     bench_rust_intervals(bencher, (-16, 32));
 }
 
-#[divan::bench(name = "convex_hull/base_contained/ours")]
+#[divan::bench(name = "convex_hull/base_contained/ours_interval")]
 fn convex_hull_int_interval_base_contained(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 112));
 }
@@ -38,7 +38,7 @@ fn convex_hull_rust_intervals_base_contained(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 112));
 }
 
-#[divan::bench(name = "convex_hull/extends_left/ours")]
+#[divan::bench(name = "convex_hull/extends_left/ours_interval")]
 fn convex_hull_int_interval_extends_left(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 32));
 }
@@ -48,7 +48,7 @@ fn convex_hull_rust_intervals_extends_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 32));
 }
 
-#[divan::bench(name = "convex_hull/extends_right/ours")]
+#[divan::bench(name = "convex_hull/extends_right/ours_interval")]
 fn convex_hull_int_interval_extends_right(bencher: Bencher) {
     bench_int_interval(bencher, (32, 112));
 }
@@ -58,7 +58,7 @@ fn convex_hull_rust_intervals_extends_right(bencher: Bencher) {
     bench_rust_intervals(bencher, (32, 112));
 }
 
-#[divan::bench(name = "convex_hull/disjoint_left/ours")]
+#[divan::bench(name = "convex_hull/disjoint_left/ours_interval")]
 fn convex_hull_int_interval_disjoint_left(bencher: Bencher) {
     bench_int_interval(bencher, (-96, -64));
 }
@@ -68,7 +68,7 @@ fn convex_hull_rust_intervals_disjoint_left(bencher: Bencher) {
     bench_rust_intervals(bencher, (-96, -64));
 }
 
-#[divan::bench(name = "convex_hull/disjoint_right/ours")]
+#[divan::bench(name = "convex_hull/disjoint_right/ours_interval")]
 fn convex_hull_int_interval_disjoint_right(bencher: Bencher) {
     bench_int_interval(bencher, (112, 127));
 }

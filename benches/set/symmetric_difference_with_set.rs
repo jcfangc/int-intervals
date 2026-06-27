@@ -13,7 +13,7 @@ type Bounds = (i32, i32);
 const N: usize = 64;
 const STRIDE: i32 = 8;
 
-#[divan::bench(name = "symmetric_difference_with_set/disjoint_64x64/ours")]
+#[divan::bench(name = "symmetric_difference_with_set/disjoint_64x64/ours_set")]
 fn symmetric_difference_with_set_disjoint_64x64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &disjoint_rhs());
 }
@@ -28,7 +28,7 @@ fn symmetric_difference_with_set_disjoint_64x64_range_collections(bencher: Bench
     bench_range_collections(bencher, &lhs_bounds(), &disjoint_rhs());
 }
 
-#[divan::bench(name = "symmetric_difference_with_set/equal_64x64/ours")]
+#[divan::bench(name = "symmetric_difference_with_set/equal_64x64/ours_set")]
 fn symmetric_difference_with_set_equal_64x64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &equal_rhs());
 }
@@ -43,7 +43,7 @@ fn symmetric_difference_with_set_equal_64x64_range_collections(bencher: Bencher)
     bench_range_collections(bencher, &lhs_bounds(), &equal_rhs());
 }
 
-#[divan::bench(name = "symmetric_difference_with_set/partial_overlap_64x64/ours")]
+#[divan::bench(name = "symmetric_difference_with_set/partial_overlap_64x64/ours_set")]
 fn symmetric_difference_with_set_partial_overlap_64x64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &partial_overlap_rhs());
 }
@@ -58,7 +58,7 @@ fn symmetric_difference_with_set_partial_overlap_64x64_range_collections(bencher
     bench_range_collections(bencher, &lhs_bounds(), &partial_overlap_rhs());
 }
 
-#[divan::bench(name = "symmetric_difference_with_set/alternating_64x32/ours")]
+#[divan::bench(name = "symmetric_difference_with_set/alternating_64x32/ours_set")]
 fn symmetric_difference_with_set_alternating_64x32_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &alternating_rhs());
 }
@@ -73,7 +73,7 @@ fn symmetric_difference_with_set_alternating_64x32_range_collections(bencher: Be
     bench_range_collections(bencher, &lhs_bounds(), &alternating_rhs());
 }
 
-#[divan::bench(name = "symmetric_difference_with_set/broad_middle_64x1/ours")]
+#[divan::bench(name = "symmetric_difference_with_set/broad_middle_64x1/ours_set")]
 fn symmetric_difference_with_set_broad_middle_64x1_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &lhs_bounds(), &broad_middle_rhs());
 }

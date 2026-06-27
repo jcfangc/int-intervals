@@ -8,7 +8,7 @@ fn main() {
 
 const OUTER: (i8, i8) = (-32, 96);
 
-#[divan::bench(name = "contains_interval/equal/ours")]
+#[divan::bench(name = "contains_interval/equal/ours_interval")]
 fn contains_interval_equal_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 96));
 }
@@ -18,7 +18,7 @@ fn contains_interval_equal_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-32, 96));
 }
 
-#[divan::bench(name = "contains_interval/contains_strict/ours")]
+#[divan::bench(name = "contains_interval/contains_strict/ours_interval")]
 fn contains_interval_contains_strict_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-16, 32));
 }
@@ -28,7 +28,7 @@ fn contains_interval_contains_strict_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-16, 32));
 }
 
-#[divan::bench(name = "contains_interval/contains_left_edge/ours")]
+#[divan::bench(name = "contains_interval/contains_left_edge/ours_interval")]
 fn contains_interval_contains_left_edge_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 32));
 }
@@ -38,7 +38,7 @@ fn contains_interval_contains_left_edge_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-32, 32));
 }
 
-#[divan::bench(name = "contains_interval/contains_right_edge/ours")]
+#[divan::bench(name = "contains_interval/contains_right_edge/ours_interval")]
 fn contains_interval_contains_right_edge_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (32, 96));
 }
@@ -48,7 +48,7 @@ fn contains_interval_contains_right_edge_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (32, 96));
 }
 
-#[divan::bench(name = "contains_interval/miss_left/ours")]
+#[divan::bench(name = "contains_interval/miss_left/ours_interval")]
 fn contains_interval_miss_left_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 32));
 }
@@ -58,7 +58,7 @@ fn contains_interval_miss_left_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 32));
 }
 
-#[divan::bench(name = "contains_interval/miss_right/ours")]
+#[divan::bench(name = "contains_interval/miss_right/ours_interval")]
 fn contains_interval_miss_right_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (32, 112));
 }
