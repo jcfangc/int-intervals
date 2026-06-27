@@ -5,7 +5,6 @@ use crate::{
     },
 };
 use alloc::vec;
-use alloc::vec::Vec;
 
 #[test]
 fn at_least_above_max_uses_empty_fast_path_without_covered_cache() {
