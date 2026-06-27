@@ -1,6 +1,6 @@
 use super::*;
 
-use std::sync::{Arc, OnceLock};
+use alloc::sync::Arc;
 
 use crate::set::IntCOSet;
 
@@ -13,7 +13,7 @@ where
 {
     change_points: Arc<[ChangePoint<I::CoordType>]>,
     height_stats: HeightStats,
-    covered: OnceLock<IntCOSet<I>>,
+    covered: once_cell::sync::OnceCell<IntCOSet<I>>,
 }
 
 mod impls_for_access;

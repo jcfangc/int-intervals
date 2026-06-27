@@ -1,5 +1,7 @@
-#![cfg_attr(not(any(feature = "set", feature = "stack")), no_std)]
-#[cfg(all(not(any(feature = "set", feature = "stack")), test))]
+#![no_std]
+#[cfg(any(feature = "set", feature = "stack"))]
+extern crate alloc;
+#[cfg(test)]
 extern crate std;
 
 pub mod interval;

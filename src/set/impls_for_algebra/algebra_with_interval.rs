@@ -1,9 +1,10 @@
 use super::*;
+use alloc::vec::Vec;
 
 impl<I: IntCO> IntCOSet<I> {
     /// Returns the canonical source range intersecting or adjacent to `query`.
     #[inline]
-    fn contiguous_range_with_interval(&self, query: I) -> std::ops::Range<usize> {
+    fn contiguous_range_with_interval(&self, query: I) -> core::ops::Range<usize> {
         let start = self
             .intervals
             .partition_point(|interval| interval.end_excl() < query.start());

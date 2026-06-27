@@ -16,7 +16,7 @@ fn one_two_iterates_owned_values() {
 fn zero_one_two_iterates_owned_values() {
     assert_eq!(
         ZeroOneTwo::<i32>::Zero.into_iter().collect::<Vec<_>>(),
-        vec![]
+        Vec::<i32>::new()
     );
     assert_eq!(ZeroOneTwo::One(1).into_iter().collect::<Vec<_>>(), vec![1]);
     assert_eq!(

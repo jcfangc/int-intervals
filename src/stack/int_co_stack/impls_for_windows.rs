@@ -1,7 +1,9 @@
-use std::num::NonZeroUsize;
+use core::num::NonZeroUsize;
 
 use crate::interval::traits::{COStartLenConstruct, IntPrimitive};
 use either::Either;
+#[cfg(feature = "parallel")]
+#[cfg(feature = "parallel")]
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator};
 
 use super::*;
@@ -85,7 +87,7 @@ where
         let count = window_count::<I>(from, to, len).unwrap_or(0);
 
         let Some(count) = NonZeroUsize::new(count) else {
-            return Either::Left(std::iter::empty());
+            return Either::Left(core::iter::empty());
         };
 
         Either::Right(WindowIter::new(self, from, len, count))
@@ -98,6 +100,7 @@ where
     /// range, allowing Rayon to split the work directly without a serial
     /// producer or `par_bridge`.
     #[inline]
+    #[cfg(feature = "parallel")]
     pub fn par_iter_windows(
         &self,
         from: I::CoordType,
@@ -156,4 +159,5 @@ mod tests_for_start_at;
 mod tests_for_window_at;
 
 #[cfg(test)]
+#[cfg(feature = "parallel")]
 mod tests_for_iter_windows;

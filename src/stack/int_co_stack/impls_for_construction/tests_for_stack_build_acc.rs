@@ -9,6 +9,8 @@ use crate::{
         test_support::*,
     },
 };
+use alloc::vec;
+use alloc::vec::Vec;
 use proptest::prelude::*;
 
 #[test]

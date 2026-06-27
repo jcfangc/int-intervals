@@ -1,5 +1,7 @@
 use crate::interval::I32CO;
 use crate::set::IntCOSet;
+use alloc::vec;
+use alloc::vec::Vec;
 use proptest::prelude::*;
 
 use super::*;

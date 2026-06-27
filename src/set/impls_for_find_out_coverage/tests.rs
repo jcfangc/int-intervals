@@ -1,4 +1,6 @@
 use crate::interval::traits::IntPrimitive;
+use alloc::vec;
+use alloc::vec::Vec;
 use proptest::prelude::*;
 
 use crate::{
@@ -209,7 +211,7 @@ proptest! {
     ) {
         let set: I8COSet = xs.into_iter().collect();
 
-        let expected = set
+        let expected: u8 = set
             .intersection_with_interval(query)
             .iter_intervals()
             .map(|iv| iv.len())

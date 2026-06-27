@@ -1,5 +1,7 @@
 use super::*;
+use alloc::vec::Vec;
 
+#[cfg(feature = "parallel")]
 use rayon::iter::{FromParallelIterator, IntoParallelIterator, ParallelIterator};
 
 const BATCH_SIZE: usize = 128;
@@ -12,7 +14,7 @@ where
     fn default() -> Self {
         Self {
             change_points: Arc::from([]),
-            covered: OnceLock::default(),
+            covered: once_cell::sync::OnceCell::default(),
             height_stats: HeightStats::default(),
         }
     }
@@ -199,7 +201,7 @@ where
             (Some(l), Some(r)) => match l.at.cmp(&r.at) {
                 // Only `lhs` changes at this coordinate; keep the current
                 // height contributed by `rhs`.
-                std::cmp::Ordering::Less => {
+                core::cmp::Ordering::Less => {
                     lhs_height = l.height_after;
                     lhs_cursor += 1;
                     l.at
@@ -207,7 +209,7 @@ where
 
                 // Only `rhs` changes at this coordinate; keep the current
                 // height contributed by `lhs`.
-                std::cmp::Ordering::Greater => {
+                core::cmp::Ordering::Greater => {
                     rhs_height = r.height_after;
                     rhs_cursor += 1;
                     r.at
@@ -215,7 +217,7 @@ where
 
                 // Both functions change at the same coordinate. Apply both
                 // changes before computing the merged height after `at`.
-                std::cmp::Ordering::Equal => {
+                core::cmp::Ordering::Equal => {
                     lhs_height = l.height_after;
                     rhs_height = r.height_after;
                     lhs_cursor += 1;
@@ -407,12 +409,13 @@ where
 
         Self {
             change_points: points.into(),
-            covered: OnceLock::new(),
+            covered: once_cell::sync::OnceCell::new(),
             height_stats,
         }
     }
 }
 
+#[cfg(feature = "parallel")]
 impl<I> FromParallelIterator<I> for IntCOStack<I>
 where
     I: IntCO + Copy + Send,
@@ -443,7 +446,7 @@ where
 
         Self {
             change_points: points.into(),
-            covered: OnceLock::new(),
+            covered: once_cell::sync::OnceCell::new(),
             height_stats,
         }
     }

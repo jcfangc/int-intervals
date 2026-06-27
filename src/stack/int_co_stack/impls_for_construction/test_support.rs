@@ -1,4 +1,5 @@
 use crate::interval::I32CO;
+use alloc::vec::Vec;
 
 use crate::stack::height_stats::test_support::height_stats_from_points;
 
@@ -79,7 +80,7 @@ where
 pub(crate) fn stack_from_points(points: Vec<ChangePoint<i32>>) -> IntCOStack<I32CO> {
     IntCOStack {
         change_points: Arc::from(points.clone().into_boxed_slice()),
-        covered: OnceLock::new(),
+        covered: once_cell::sync::OnceCell::new(),
         height_stats: height_stats_from_points(&points),
     }
 }

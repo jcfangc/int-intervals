@@ -1,5 +1,7 @@
 use super::*;
+use alloc::vec::Vec;
 
+#[cfg(feature = "parallel")]
 use rayon::iter::{FromParallelIterator, IntoParallelIterator, ParallelIterator};
 
 use crate::set::funcs_for_canonicalization::{is_canonical, merge, normalize};
@@ -51,7 +53,7 @@ impl<I: IntCO> FromIterator<I> for IntCOSet<I> {
             batch.push(iv);
 
             if batch.len() == BATCH_SIZE {
-                let run = normalize(std::mem::replace(
+                let run = normalize(core::mem::replace(
                     &mut batch,
                     Vec::with_capacity(BATCH_SIZE),
                 ));
@@ -71,6 +73,7 @@ impl<I: IntCO> FromIterator<I> for IntCOSet<I> {
     }
 }
 
+#[cfg(feature = "parallel")]
 impl<I> FromParallelIterator<I> for IntCOSet<I>
 where
     I: IntCO + Send,
@@ -87,7 +90,7 @@ where
                     batch.push(iv);
 
                     if batch.len() == BATCH_SIZE {
-                        let run = normalize(std::mem::replace(
+                        let run = normalize(core::mem::replace(
                             &mut batch,
                             Vec::with_capacity(BATCH_SIZE),
                         ));
@@ -117,4 +120,5 @@ where
 #[cfg(test)]
 mod tests_for_from_iter;
 #[cfg(test)]
+#[cfg(feature = "parallel")]
 mod tests_for_from_par_iter;

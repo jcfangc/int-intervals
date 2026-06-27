@@ -1,4 +1,5 @@
 use super::*;
+use alloc::vec::Vec;
 
 /// Projects the covered interval set from canonical stack change points.
 ///

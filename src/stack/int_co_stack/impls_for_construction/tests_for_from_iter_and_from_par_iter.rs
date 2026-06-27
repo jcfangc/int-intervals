@@ -1,3 +1,6 @@
+use alloc::vec;
+
+use alloc::vec::Vec;
 // int_co_stack/impls_for_construction/tests_for_from_iter_and_from_par_iter.rs
 use super::*;
 use crate::interval::I32CO;
@@ -19,7 +22,9 @@ fn from_iter_handles_many_batches_of_identical_intervals() {
 
 proptest! {
     #[test]
-    fn par_collect_matches_seq_collect(intervals in intervals_strategy(0..256)) {
+    #[cfg(feature = "parallel")]
+    #[cfg(feature = "parallel")]
+fn par_collect_matches_seq_collect(intervals in intervals_strategy(0..256)) {
         let seq: IntCOStack<I32CO> =
             intervals.iter().copied().map(|(s, e)| iv_i32(s, e)).collect();
 

@@ -118,33 +118,45 @@ pub(crate) fn emit_file(path: impl AsRef<Path>, expected: String, mode: EmitMode
 }
 
 fn write_interval_mod(src: &Path, mode: EmitMode) {
+    // Build sorted lists — cargo fmt sorts mod declarations alphabetically.
+    let mut mods: Vec<String> = Vec::new();
+    mods.push("mod i128;".into());
+    mods.push("mod i16;".into());
+    mods.push("mod i32;".into());
+    mods.push("mod i64;".into());
+    mods.push("mod i8;".into());
+    mods.push("mod isize;".into());
+    mods.push("mod res;".into());
+    mods.push("pub mod traits;".into());
+    mods.push("mod u128;".into());
+    mods.push("mod u16;".into());
+    mods.push("mod u32;".into());
+    mods.push("mod u64;".into());
+    mods.push("mod u8;".into());
+    mods.push("mod usize;".into());
+
     let mut s = String::new();
-
-    s.push_str("pub mod traits;\n");
-    s.push_str("mod res;\n");
-
-    s.push_str("mod u8;\n");
-    s.push_str("mod i8;\n");
-
-    for (ty, _) in UNSIGNED_TYPES {
-        s.push_str(&format!("mod {ty};\n"));
+    for m in &mods {
+        s.push_str(m);
+        s.push('\n');
     }
-    for (ty, _) in SIGNED_TYPES {
-        s.push_str(&format!("mod {ty};\n"));
-    }
-
     s.push('\n');
 
+    // Re-export order must match cargo fmt numeric sort:
+    // i8, i16, i32, i64, i128, isize, res, u8, u16, u32, u64, u128, usize
+    s.push_str("pub use i8::I8CO;\n");
+    s.push_str("pub use i16::I16CO;\n");
+    s.push_str("pub use i32::I32CO;\n");
+    s.push_str("pub use i64::I64CO;\n");
+    s.push_str("pub use i128::I128CO;\n");
+    s.push_str("pub use isize::IsizeCO;\n");
     s.push_str("pub use res::{EmptyRangeError, OneTwo, ZeroOneTwo};\n");
     s.push_str("pub use u8::U8CO;\n");
-    s.push_str("pub use i8::I8CO;\n");
-
-    for (ty, name) in UNSIGNED_TYPES {
-        s.push_str(&format!("pub use {ty}::{name};\n"));
-    }
-    for (ty, name) in SIGNED_TYPES {
-        s.push_str(&format!("pub use {ty}::{name};\n"));
-    }
+    s.push_str("pub use u16::U16CO;\n");
+    s.push_str("pub use u32::U32CO;\n");
+    s.push_str("pub use u64::U64CO;\n");
+    s.push_str("pub use u128::U128CO;\n");
+    s.push_str("pub use usize::UsizeCO;\n");
 
     emit_file(src.join("..").join("interval.rs"), s, mode);
 }

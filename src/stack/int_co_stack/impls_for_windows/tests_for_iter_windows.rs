@@ -1,4 +1,7 @@
 use crate::interval::I8CO;
+use alloc::vec;
+use alloc::vec::Vec;
+#[cfg(feature = "parallel")]
 use rayon::iter::ParallelIterator;
 
 use crate::stack::int_co_stack::impls_for_windows::test_support::{

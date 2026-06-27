@@ -1,3 +1,4 @@
+use alloc::vec::Vec;
 use std::collections::BTreeSet;
 
 use crate::stack::int_co_stack::test_support::naive_height_at;

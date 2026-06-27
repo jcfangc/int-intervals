@@ -1,4 +1,5 @@
 use crate::interval::I8CO;
+use alloc::vec::Vec;
 
 use crate::stack::int_co_stack::impls_for_windows::test_support::window_bounds;
 

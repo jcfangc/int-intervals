@@ -1,4 +1,5 @@
 use super::*;
+use alloc::vec::Vec;
 
 /// Checks the canonical invariant used by binary-search queries.
 ///
@@ -65,8 +66,8 @@ where
         L: Iterator,
         R: Iterator<Item = L::Item>,
     {
-        left: std::iter::Peekable<L>,
-        right: std::iter::Peekable<R>,
+        left: core::iter::Peekable<L>,
+        right: core::iter::Peekable<R>,
     }
 
     impl<I, L, R> Iterator for Merge<L, R>

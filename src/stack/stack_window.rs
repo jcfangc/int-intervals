@@ -1,6 +1,8 @@
-use std::num::NonZeroUsize;
+use core::num::NonZeroUsize;
 
 use crate::interval::traits::{COStartLenConstruct, IntCO, IntPrimitive};
+#[cfg(feature = "parallel")]
+#[cfg(feature = "parallel")]
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator};
 
 use crate::stack::{HeightRun, IntCOStack};
@@ -155,6 +157,7 @@ where
     /// split the work directly. This is mainly useful when the per-run mapping
     /// is expensive or the window contains many height changes.
     #[inline]
+    #[cfg(feature = "parallel")]
     pub fn par_iter_height_runs(&self) -> impl IndexedParallelIterator<Item = HeightRun<I>> {
         (0..self.height_run_count())
             .into_par_iter()
@@ -319,4 +322,5 @@ mod tests_for_new;
 mod tests_for_height_run_at;
 
 #[cfg(test)]
+#[cfg(feature = "parallel")]
 mod tests_for_iter_height_runs;

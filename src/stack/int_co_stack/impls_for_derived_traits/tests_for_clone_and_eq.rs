@@ -1,4 +1,4 @@
-use std::sync::Arc;
+use alloc::sync::Arc;
 
 use crate::stack::int_co_stack::test_support::stack_from_intervals;
 
@@ -18,7 +18,7 @@ fn clone_preserves_canonical_state() {
 fn clone_does_not_copy_lazy_covered_cache() {
     let stack = stack_from_intervals(&[(0, 3), (1, 4), (6, 8)]);
 
-    assert!(stack.covered.get().is_none());
+    assert!(!stack.covered.get().is_some());
 
     let _ = stack.covered();
 
@@ -26,7 +26,7 @@ fn clone_does_not_copy_lazy_covered_cache() {
 
     let cloned = stack.clone();
 
-    assert!(cloned.covered.get().is_none());
+    assert!(!cloned.covered.get().is_some());
     assert_eq!(cloned, stack);
 }
 
@@ -38,7 +38,7 @@ fn equality_ignores_lazy_covered_cache_state() {
     let _ = lhs.covered();
 
     assert!(lhs.covered.get().is_some());
-    assert!(rhs.covered.get().is_none());
+    assert!(!rhs.covered.get().is_some());
 
     assert_eq!(lhs, rhs);
 }

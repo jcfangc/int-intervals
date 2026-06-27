@@ -1,4 +1,5 @@
 use crate::interval::I8CO;
+use alloc::vec::Vec;
 
 use crate::{
     I8COSet,

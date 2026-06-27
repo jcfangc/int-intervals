@@ -1,5 +1,7 @@
 use crate::interval::traits::IntCO;
 use crate::interval::{I8CO, I32CO};
+use alloc::vec;
+use alloc::vec::Vec;
 use std::num::NonZeroUsize;
 
 use crate::IntCOStack;
@@ -417,7 +419,9 @@ fn iter_height_runs_match_stack_window_height_runs() {
 // ---------------------------------------------------------------------------
 
 #[test]
+#[cfg(feature = "parallel")]
 fn serial_and_parallel_windows_match() {
+    #[cfg(feature = "parallel")]
     use rayon::prelude::*;
 
     let stack = stack_from_intervals(&[(1, 4), (3, 6), (8, 10)]);

@@ -8,7 +8,7 @@ where
         Self {
             change_points: self.change_points.clone(),
             height_stats: self.height_stats,
-            covered: OnceLock::new(),
+            covered: once_cell::sync::OnceCell::new(),
         }
     }
 }

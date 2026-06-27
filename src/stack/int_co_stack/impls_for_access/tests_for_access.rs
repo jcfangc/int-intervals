@@ -3,6 +3,8 @@ use crate::interval::I32CO;
 use crate::{
     stack::change_point::test_support::oracle_points, stack::int_co_stack::test_support::*,
 };
+use alloc::vec;
+use alloc::vec::Vec;
 use proptest::prelude::*;
 
 #[test]

@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod test_support;
 
-use std::sync::Arc;
+pub(crate) use alloc::sync::Arc;
 
 use crate::interval::traits::IntCO;
 

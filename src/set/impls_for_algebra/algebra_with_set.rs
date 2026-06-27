@@ -1,4 +1,5 @@
 use crate::set::funcs_for_canonicalization::{canonicalize_sorted, merge_sorted};
+use alloc::vec::Vec;
 
 use super::*;
 
@@ -41,9 +42,9 @@ impl<I: IntCO> IntCOSet<I> {
             }
 
             match a.end_excl().cmp(&b.end_excl()) {
-                std::cmp::Ordering::Less => left += 1,
-                std::cmp::Ordering::Greater => right += 1,
-                std::cmp::Ordering::Equal => {
+                core::cmp::Ordering::Less => left += 1,
+                core::cmp::Ordering::Greater => right += 1,
+                core::cmp::Ordering::Equal => {
                     left += 1;
                     right += 1;
                 }

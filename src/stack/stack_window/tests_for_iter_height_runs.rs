@@ -1,3 +1,6 @@
+use alloc::vec;
+use alloc::vec::Vec;
+#[cfg(feature = "parallel")]
 use rayon::iter::ParallelIterator;
 
 use crate::stack::int_co_stack::test_support::{iv_i32, stack_from_intervals};
@@ -11,6 +14,7 @@ fn collect_runs(window: StackWindow<'_, crate::interval::I32CO>) -> Vec<((i32, i
         .collect()
 }
 
+#[cfg(feature = "parallel")]
 fn collect_runs_parallel(
     window: StackWindow<'_, crate::interval::I32CO>,
 ) -> Vec<((i32, i32), usize)> {

@@ -9,6 +9,8 @@ use crate::{
         test_support::{intervals_strategy, prop_assert_canonical},
     },
 };
+use alloc::vec;
+use alloc::vec::Vec;
 use proptest::prelude::*;
 
 #[test]

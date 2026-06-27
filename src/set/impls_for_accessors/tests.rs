@@ -1,3 +1,5 @@
+use alloc::vec;
+use alloc::vec::Vec;
 use proptest::prelude::*;
 
 use crate::{

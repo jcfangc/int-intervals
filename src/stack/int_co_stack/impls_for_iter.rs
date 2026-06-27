@@ -1,4 +1,4 @@
-use std::num::NonZeroUsize;
+use core::num::NonZeroUsize;
 
 use either::Either;
 
@@ -80,7 +80,7 @@ where
         let stack_max = self.height_stats.max_height();
 
         if min_height > stack_max {
-            Either::Left(std::iter::empty())
+            Either::Left(core::iter::empty())
         } else if min_height <= self.height_stats.min_positive_height_or_zero() {
             Either::Right(Either::Left(self.iter_height_segments()))
         } else {
@@ -114,7 +114,7 @@ where
         let stack_min = self.height_stats.min_positive_height_or_zero();
 
         if max_height == 0 || max_height < stack_min {
-            Either::Left(std::iter::empty())
+            Either::Left(core::iter::empty())
         } else if max_height >= self.height_stats.max_height() {
             Either::Right(Either::Left(self.iter_height_segments()))
         } else {
@@ -146,7 +146,7 @@ where
         target_height: usize,
     ) -> impl Iterator<Item = HeightSegment<I>> + '_ {
         let Some(target_height) = NonZeroUsize::new(target_height) else {
-            return Either::Left(std::iter::empty());
+            return Either::Left(core::iter::empty());
         };
 
         let target = target_height.get();
@@ -154,7 +154,7 @@ where
         if target < self.height_stats.min_positive_height_or_zero()
             || target > self.height_stats.max_height()
         {
-            Either::Left(std::iter::empty())
+            Either::Left(core::iter::empty())
         } else if self.height_stats.uniform_positive_height() == Some(target_height) {
             Either::Right(Either::Left(self.covered().iter_intervals().map(
                 move |interval| HeightSegment {
@@ -203,7 +203,7 @@ where
             || max_height < stack_min
             || query_min > stack_max
         {
-            Either::Left(std::iter::empty())
+            Either::Left(core::iter::empty())
         } else if query_min <= stack_min && max_height >= stack_max {
             Either::Right(Either::Left(self.iter_height_segments()))
         } else {

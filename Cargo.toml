@@ -14,12 +14,14 @@ categories = ["data-structures", "no-std"]
 
 [features]
 default = []
-set = ["rayon"]
-stack = ["set", "either"]
+set = []
+stack = ["set", "either", "once_cell"]
+parallel = ["dep:rayon", "set"]
 
 [dependencies]
 rayon = { version = "1.12.0", optional = true }
 either = { version = "1.16.0", optional = true }
+once_cell = { version = "1", optional = true, default-features = false, features = ["alloc"] }
 
 [dev-dependencies]
 divan = { version = "4.7.0", package = "codspeed-divan-compat" }

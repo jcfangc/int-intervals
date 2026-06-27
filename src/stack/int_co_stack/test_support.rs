@@ -1,4 +1,5 @@
 use crate::stack::change_point::test_support::oracle_points;
+use alloc::vec::Vec;
 
 use super::*;
 use crate::interval::I32CO;

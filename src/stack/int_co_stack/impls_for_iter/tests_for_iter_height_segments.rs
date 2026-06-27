@@ -1,3 +1,5 @@
+use alloc::vec;
+use alloc::vec::Vec;
 use proptest::prelude::*;
 
 use crate::{
@@ -75,7 +77,7 @@ proptest! {
 fn uniform_positive_height_path_initializes_covered_cache() {
     let stack = stack_from_points(vec![cp(0, 2), cp(3, 0), cp(5, 2), cp(8, 0)]);
 
-    assert!(stack.covered.get().is_none());
+    assert!(!stack.covered.get().is_some());
 
     let segments = collect_segments(stack.iter_height_segments());
 
@@ -87,11 +89,11 @@ fn uniform_positive_height_path_initializes_covered_cache() {
 fn non_uniform_positive_height_path_does_not_initialize_covered_cache() {
     let stack = stack_from_points(vec![cp(0, 1), cp(2, 3), cp(5, 1), cp(7, 0)]);
 
-    assert!(stack.covered.get().is_none());
+    assert!(!stack.covered.get().is_some());
 
     let segments = collect_segments(stack.iter_height_segments());
 
-    assert!(stack.covered.get().is_none());
+    assert!(!stack.covered.get().is_some());
     assert_eq!(segments, vec![((0, 2), 1), ((2, 5), 3), ((5, 7), 1)]);
 }
 
@@ -99,11 +101,11 @@ fn non_uniform_positive_height_path_does_not_initialize_covered_cache() {
 fn empty_stack_does_not_initialize_covered_cache() {
     let stack = stack_from_points(vec![]);
 
-    assert!(stack.covered.get().is_none());
+    assert!(!stack.covered.get().is_some());
 
     let segments = collect_segments(stack.iter_height_segments());
 
-    assert!(stack.covered.get().is_none());
+    assert!(!stack.covered.get().is_some());
     assert_eq!(segments, vec![]);
 }
 
