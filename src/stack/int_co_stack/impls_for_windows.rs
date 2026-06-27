@@ -2,7 +2,7 @@ use core::num::NonZeroUsize;
 
 use crate::interval::traits::{COStartLenConstruct, IntPrimitive};
 use either::Either;
-#[cfg(feature = "parallel")]
+
 #[cfg(feature = "parallel")]
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator};
 
