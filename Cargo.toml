@@ -9,7 +9,7 @@ description = "Closed-open integer interval algebra, canonical interval sets, an
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/jcfangc/int-intervals"
 readme = "README.md"
-keywords = ["interval", "set", "stack", "range", "integer", "no_std", "algebra"]
+keywords = ["interval", "set", "stack", "no_std", "integer"]
 categories = ["data-structures", "no-std"]
 exclude = [
     "/benches",
