@@ -15,5 +15,5 @@ jobs:
     uses: jcfangc/ci/.github/workflows/rust-codspeed.yml@v0
     with:
       rust_toolchain: stable
-      build_command: cargo codspeed build -m simulation --features stack
-      run_command: cargo codspeed run -m simulation --features stack
+      build_command: cargo codspeed build -m simulation --features "stack,parallel"
+      run_command: cargo codspeed run -m simulation --features "stack,parallel"

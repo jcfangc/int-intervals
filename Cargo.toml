@@ -228,7 +228,7 @@ required-features = ["stack"]
 name = "construct_parallel"
 path = "benches/stack/construct_parallel.rs"
 harness = false
-required-features = ["stack"]
+required-features = ["stack", "parallel"]
 
 [[bench]]
 name = "height_at"
