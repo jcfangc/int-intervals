@@ -1,0 +1,37 @@
+name: gate
+
+on:
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+concurrency:
+  group: gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Compile Python scripts
+        run: python3 -m compileall .github/scripts
+
+      - name: Check generated files
+        run: python3 .github/scripts/release/check_codegen.py
+
+      - name: Test (base)
+        run: cargo test --locked
+
+      - name: Test (set feature)
+        run: cargo test --locked --features set
+
+      - name: Test (stack feature)
+        run: cargo test --locked --features stack

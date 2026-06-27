@@ -1,0 +1,208 @@
+[workspace]
+members = [".", "xtask/codegen"]
+
+[package]
+name = "int-intervals"
+version = "0.1.0"
+edition = "2024"
+description = "Closed-open integer interval algebra, canonical interval sets, and overlap-stack structures."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/jcfangc/int-intervals"
+readme = "README.md"
+keywords = ["interval", "set", "stack", "range", "integer", "no_std", "algebra"]
+categories = ["data-structures", "no-std"]
+
+[features]
+default = []
+set = ["rayon"]
+stack = ["set", "either"]
+
+[dependencies]
+rayon = { version = "1.12.0", optional = true }
+either = { version = "1.16.0", optional = true }
+
+[dev-dependencies]
+divan = { version = "4.7.0", package = "codspeed-divan-compat" }
+proptest = "1.10.0"
+rust_intervals = "1.0.0"
+range-collections = "0.4.6"
+range-set-blaze = "0.5.0"
+rangemap = "1.7.1"
+
+[lib]
+doctest = false
+bench = false
+
+# ── interval benches ────────────────────────────────────────
+
+[[bench]]
+name = "construct"
+harness = false
+
+[[bench]]
+name = "contains"
+harness = false
+
+[[bench]]
+name = "contains_interval"
+harness = false
+
+[[bench]]
+name = "iter"
+harness = false
+
+[[bench]]
+name = "intersects"
+harness = false
+
+[[bench]]
+name = "intersection"
+harness = false
+
+[[bench]]
+name = "convex_hull"
+harness = false
+
+[[bench]]
+name = "between"
+harness = false
+
+[[bench]]
+name = "union"
+harness = false
+
+[[bench]]
+name = "difference"
+harness = false
+
+[[bench]]
+name = "symmetric_difference"
+harness = false
+
+[[bench]]
+name = "contiguous"
+harness = false
+
+# ── set benches ─────────────────────────────────────────────
+
+[[bench]]
+name = "construct_set"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "contains_point"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "contains_interval_set"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "intersects_interval"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "intersection_with_set"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "union_with_set"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "difference_with_set"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "symmetric_difference_with_set"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "intersection_with_interval"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "union_with_interval"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "difference_with_interval"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "symmetric_difference_with_interval"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "iter_intervals"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "interval_containing_point"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "intervals_intersecting"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "covered_len_of"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "uncovered_len_of"
+harness = false
+required-features = ["set"]
+
+[[bench]]
+name = "coverage_ratio_f32_of"
+harness = false
+required-features = ["set"]
+
+# ── stack benches ───────────────────────────────────────────
+
+[[bench]]
+name = "construct_stack"
+harness = false
+required-features = ["stack"]
+
+[[bench]]
+name = "construct_parallel"
+harness = false
+required-features = ["stack"]
+
+[[bench]]
+name = "height_at"
+harness = false
+required-features = ["stack"]
+
+[[bench]]
+name = "iter_height_segments"
+harness = false
+required-features = ["stack"]
+
+[[bench]]
+name = "window_iter_bounds"
+harness = false
+required-features = ["stack"]
+
+[[bench]]
+name = "window_height_runs"
+harness = false
+required-features = ["stack"]
