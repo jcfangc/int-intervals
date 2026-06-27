@@ -48,141 +48,171 @@ bench = false
 
 [[bench]]
 name = "construct"
+path = "benches/interval/construct.rs"
 harness = false
 
 [[bench]]
 name = "contains"
+path = "benches/interval/contains.rs"
 harness = false
 
 [[bench]]
 name = "contains_interval"
+path = "benches/interval/contains_interval.rs"
 harness = false
 
 [[bench]]
 name = "iter"
+path = "benches/interval/iter.rs"
 harness = false
 
 [[bench]]
 name = "intersects"
+path = "benches/interval/intersects.rs"
 harness = false
 
 [[bench]]
 name = "intersection"
+path = "benches/interval/intersection.rs"
 harness = false
 
 [[bench]]
 name = "convex_hull"
+path = "benches/interval/convex_hull.rs"
 harness = false
 
 [[bench]]
 name = "between"
+path = "benches/interval/between.rs"
 harness = false
 
 [[bench]]
 name = "union"
+path = "benches/interval/union.rs"
 harness = false
 
 [[bench]]
 name = "difference"
+path = "benches/interval/difference.rs"
 harness = false
 
 [[bench]]
 name = "symmetric_difference"
+path = "benches/interval/symmetric_difference.rs"
 harness = false
 
 [[bench]]
 name = "contiguous"
+path = "benches/interval/contiguous.rs"
 harness = false
 
 # ── set benches ─────────────────────────────────────────────
 
 [[bench]]
 name = "construct_set"
+path = "benches/set/construct_set.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "contains_point"
+path = "benches/set/contains_point.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "contains_interval_set"
+path = "benches/set/contains_interval_set.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "intersects_interval"
+path = "benches/set/intersects_interval.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "intersection_with_set"
+path = "benches/set/intersection_with_set.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "union_with_set"
+path = "benches/set/union_with_set.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "difference_with_set"
+path = "benches/set/difference_with_set.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "symmetric_difference_with_set"
+path = "benches/set/symmetric_difference_with_set.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "intersection_with_interval"
+path = "benches/set/intersection_with_interval.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "union_with_interval"
+path = "benches/set/union_with_interval.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "difference_with_interval"
+path = "benches/set/difference_with_interval.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "symmetric_difference_with_interval"
+path = "benches/set/symmetric_difference_with_interval.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "iter_intervals"
+path = "benches/set/iter_intervals.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "interval_containing_point"
+path = "benches/set/interval_containing_point.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "intervals_intersecting"
+path = "benches/set/intervals_intersecting.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "covered_len_of"
+path = "benches/set/covered_len_of.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "uncovered_len_of"
+path = "benches/set/uncovered_len_of.rs"
 harness = false
 required-features = ["set"]
 
 [[bench]]
 name = "coverage_ratio_f32_of"
+path = "benches/set/coverage_ratio_f32_of.rs"
 harness = false
 required-features = ["set"]
 
@@ -190,30 +220,36 @@ required-features = ["set"]
 
 [[bench]]
 name = "construct_stack"
+path = "benches/stack/construct_stack.rs"
 harness = false
 required-features = ["stack"]
 
 [[bench]]
 name = "construct_parallel"
+path = "benches/stack/construct_parallel.rs"
 harness = false
 required-features = ["stack"]
 
 [[bench]]
 name = "height_at"
+path = "benches/stack/height_at.rs"
 harness = false
 required-features = ["stack"]
 
 [[bench]]
 name = "iter_height_segments"
+path = "benches/stack/iter_height_segments.rs"
 harness = false
 required-features = ["stack"]
 
 [[bench]]
 name = "window_iter_bounds"
+path = "benches/stack/window_iter_bounds.rs"
 harness = false
 required-features = ["stack"]
 
 [[bench]]
 name = "window_height_runs"
+path = "benches/stack/window_height_runs.rs"
 harness = false
 required-features = ["stack"]
