@@ -1,10 +1,14 @@
-macro_rules! __impl_co_basic_forwarding {
+macro_rules! __impl_co_primitive_forwarding {
     ($interval:ty, $coord:ty, $measure:ty) => {
         impl $crate::interval::traits::COPrimitive for $interval {
             type CoordType = $coord;
             type MeasureType = $measure;
         }
+    };
+}
 
+macro_rules! __impl_co_construction_forwarding {
+    ($interval:ty, $coord:ty, $measure:ty) => {
         impl $crate::interval::traits::COConstruct for $interval {
             #[inline]
             fn try_new(start: $coord, end_excl: $coord) -> Option<Self> {
@@ -40,7 +44,11 @@ macro_rules! __impl_co_basic_forwarding {
                 <$interval>::saturating_from_start_len(start, len)
             }
         }
+    };
+}
 
+macro_rules! __impl_co_accessors_forwarding {
+    ($interval:ty, $coord:ty, $measure:ty) => {
         impl $crate::interval::traits::COBounds for $interval {
             #[inline]
             fn start(self) -> $coord {
@@ -71,7 +79,11 @@ macro_rules! __impl_co_basic_forwarding {
                 <$interval>::midpoint(self)
             }
         }
+    };
+}
 
+macro_rules! __impl_co_predicates_forwarding {
+    ($interval:ty, $coord:ty) => {
         impl $crate::interval::traits::COPredicates for $interval {
             #[inline]
             fn contains(self, x: $coord) -> bool {
@@ -98,7 +110,11 @@ macro_rules! __impl_co_basic_forwarding {
                 <$interval>::is_contiguous_with(self, other)
             }
         }
+    };
+}
 
+macro_rules! __impl_co_range_forwarding {
+    ($interval:ty, $coord:ty) => {
         impl $crate::interval::traits::CORange for $interval {
             #[inline]
             fn to_range(self) -> core::ops::Range<$coord> {
@@ -245,11 +261,64 @@ macro_rules! __impl_co_saturating_minkowski_forwarding {
     };
 }
 
+macro_rules! __impl_co_range_convert_forwarding {
+    ($interval:ty, $coord:ty) => {
+        impl TryFrom<core::ops::Range<$coord>> for $interval {
+            type Error = $crate::interval::EmptyRangeError;
+
+            /// Attempts to convert a standard-library half-open `Range` into a
+            /// closed-open interval.
+            ///
+            /// Fails with `EmptyRangeError` when `range.start >= range.end`.
+            #[inline]
+            fn try_from(range: core::ops::Range<$coord>) -> Result<Self, Self::Error> {
+                if range.start < range.end {
+                    Ok(Self {
+                        start: range.start,
+                        end_excl: range.end,
+                    })
+                } else {
+                    Err($crate::interval::EmptyRangeError)
+                }
+            }
+        }
+
+        #[cfg(rustc_1_96)]
+        impl TryFrom<core::range::Range<$coord>> for $interval {
+            type Error = $crate::interval::EmptyRangeError;
+
+            /// Attempts to convert `core::range::Range` (stabilised in Rust 1.96)
+            /// into a closed-open interval.
+            ///
+            /// Fails with `EmptyRangeError` when the range is empty or reversed.
+            #[inline]
+            fn try_from(range: core::range::Range<$coord>) -> Result<Self, Self::Error> {
+                if range.start < range.end {
+                    Ok(Self {
+                        start: range.start,
+                        end_excl: range.end,
+                    })
+                } else {
+                    Err($crate::interval::EmptyRangeError)
+                }
+            }
+        }
+    };
+}
+
 macro_rules! impl_co_forwarding {
     ($interval:ty, $coord:ty, $measure:ty) => {
-        $crate::interval::traits::forwarding::__impl_co_basic_forwarding!(
+        $crate::interval::traits::forwarding::__impl_co_primitive_forwarding!(
             $interval, $coord, $measure
         );
+        $crate::interval::traits::forwarding::__impl_co_construction_forwarding!(
+            $interval, $coord, $measure
+        );
+        $crate::interval::traits::forwarding::__impl_co_accessors_forwarding!(
+            $interval, $coord, $measure
+        );
+        $crate::interval::traits::forwarding::__impl_co_predicates_forwarding!($interval, $coord);
+        $crate::interval::traits::forwarding::__impl_co_range_forwarding!($interval, $coord);
         $crate::interval::traits::forwarding::__impl_co_algebra_forwarding!($interval);
         $crate::interval::traits::forwarding::__impl_co_checked_minkowski_forwarding!(
             $interval, $coord
@@ -257,11 +326,19 @@ macro_rules! impl_co_forwarding {
         $crate::interval::traits::forwarding::__impl_co_saturating_minkowski_forwarding!(
             $interval, $coord
         );
+        $crate::interval::traits::forwarding::__impl_co_range_convert_forwarding!(
+            $interval, $coord
+        );
     };
 }
 
+pub(crate) use __impl_co_accessors_forwarding;
 pub(crate) use __impl_co_algebra_forwarding;
-pub(crate) use __impl_co_basic_forwarding;
 pub(crate) use __impl_co_checked_minkowski_forwarding;
+pub(crate) use __impl_co_construction_forwarding;
+pub(crate) use __impl_co_predicates_forwarding;
+pub(crate) use __impl_co_primitive_forwarding;
+pub(crate) use __impl_co_range_convert_forwarding;
+pub(crate) use __impl_co_range_forwarding;
 pub(crate) use __impl_co_saturating_minkowski_forwarding;
 pub(crate) use impl_co_forwarding;

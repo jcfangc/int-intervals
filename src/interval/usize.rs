@@ -7,8 +7,6 @@
 use crate::interval::res::{OneTwo, ZeroOneTwo};
 
 #[cfg(test)]
-mod tests_for_basic;
-#[cfg(test)]
 mod tests_for_between;
 #[cfg(test)]
 mod tests_for_checked_minkowski;
@@ -19,9 +17,15 @@ mod tests_for_difference;
 #[cfg(test)]
 mod tests_for_intersection;
 #[cfg(test)]
+mod tests_for_midpoint;
+#[cfg(test)]
 mod tests_for_saturating_minkowski;
 #[cfg(test)]
+mod tests_for_start_len;
+#[cfg(test)]
 mod tests_for_symmetric_difference;
+#[cfg(test)]
+mod tests_for_try_from_range;
 #[cfg(test)]
 mod tests_for_union;
 

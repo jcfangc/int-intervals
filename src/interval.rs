@@ -19,7 +19,7 @@ pub use i32::I32CO;
 pub use i64::I64CO;
 pub use i128::I128CO;
 pub use isize::IsizeCO;
-pub use res::{OneTwo, ZeroOneTwo};
+pub use res::{EmptyRangeError, OneTwo, ZeroOneTwo};
 pub use u8::U8CO;
 pub use u16::U16CO;
 pub use u32::U32CO;

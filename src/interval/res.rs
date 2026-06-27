@@ -1,5 +1,17 @@
 use core::iter::FusedIterator;
 
+/// Error returned when attempting to convert an empty or reversed
+/// `Range` into a closed-open interval.
+#[derive(Copy, Clone, Debug, Default, Eq, PartialEq, Hash)]
+pub struct EmptyRangeError;
+
+impl core::fmt::Display for EmptyRangeError {
+    #[inline]
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        f.write_str("Range is empty or reversed; a closed-open interval requires start < end_excl")
+    }
+}
+
 #[derive(Copy, Clone, Debug, Eq, PartialEq, Hash)]
 pub enum OneTwo<T> {
     One(T),

@@ -135,7 +135,7 @@ fn write_interval_mod(src: &Path, mode: EmitMode) {
 
     s.push('\n');
 
-    s.push_str("pub use res::{OneTwo, ZeroOneTwo};\n");
+    s.push_str("pub use res::{EmptyRangeError, OneTwo, ZeroOneTwo};\n");
     s.push_str("pub use u8::U8CO;\n");
     s.push_str("pub use i8::I8CO;\n");
 

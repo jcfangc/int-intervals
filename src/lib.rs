@@ -12,10 +12,10 @@ pub mod stack;
 
 // Re-export interval types at crate root for convenience.
 pub use interval::traits::{IntCO, IntPrimitive, UnsignedPrimitive};
+pub use interval::{EmptyRangeError, OneTwo, ZeroOneTwo};
 pub use interval::{
     I8CO, I16CO, I32CO, I64CO, I128CO, IsizeCO, U8CO, U16CO, U32CO, U64CO, U128CO, UsizeCO,
 };
-pub use interval::{OneTwo, ZeroOneTwo};
 
 #[cfg(feature = "set")]
 pub use set::IntCOSet;
