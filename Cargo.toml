@@ -12,7 +12,6 @@ readme = "README.md"
 keywords = ["interval", "set", "stack", "range", "integer", "no_std", "algebra"]
 categories = ["data-structures", "no-std"]
 exclude = [
-    "benches/",
     "src/**/tests_for_*.rs",
     "src/**/test_support.rs",
     "src/**/lab.rs",
