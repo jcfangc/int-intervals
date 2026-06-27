@@ -6,7 +6,7 @@ fn main() {
     divan::main();
 }
 
-#[divan::bench(name = "iter/len_1/int_interval")]
+#[divan::bench(name = "iter/len_1/ours")]
 fn iter_int_interval_len_1(bencher: Bencher) {
     bench_int_interval(bencher, 0, 1);
 }
@@ -21,7 +21,7 @@ fn iter_std_range_len_1(bencher: Bencher) {
     bench_std_range(bencher, 0, 1);
 }
 
-#[divan::bench(name = "iter/len_16/int_interval")]
+#[divan::bench(name = "iter/len_16/ours")]
 fn iter_int_interval_len_16(bencher: Bencher) {
     bench_int_interval(bencher, -8, 8);
 }
@@ -36,7 +36,7 @@ fn iter_std_range_len_16(bencher: Bencher) {
     bench_std_range(bencher, -8, 8);
 }
 
-#[divan::bench(name = "iter/max_span/int_interval")]
+#[divan::bench(name = "iter/max_span/ours")]
 fn iter_int_interval_max_span(bencher: Bencher) {
     bench_int_interval(bencher, i8::MIN, i8::MAX);
 }

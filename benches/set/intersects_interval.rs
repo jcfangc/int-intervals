@@ -12,7 +12,7 @@ type Bounds = (i32, i32);
 
 const INTERVALS: usize = 64;
 
-#[divan::bench(name = "intersects_interval/before_all/int_interval_set")]
+#[divan::bench(name = "intersects_interval/before_all/ours")]
 fn intersects_interval_before_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-16, -8));
 }
@@ -27,7 +27,7 @@ fn intersects_interval_before_all_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (-16, -8));
 }
 
-#[divan::bench(name = "intersects_interval/hit_first/int_interval_set")]
+#[divan::bench(name = "intersects_interval/hit_first/ours")]
 fn intersects_interval_hit_first_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (1, 3));
 }
@@ -42,7 +42,7 @@ fn intersects_interval_hit_first_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (1, 3));
 }
 
-#[divan::bench(name = "intersects_interval/adjacent_left_middle/int_interval_set")]
+#[divan::bench(name = "intersects_interval/adjacent_left_middle/ours")]
 fn intersects_interval_adjacent_left_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (252, 256));
 }
@@ -57,7 +57,7 @@ fn intersects_interval_adjacent_left_middle_range_collections(bencher: Bencher) 
     bench_range_collections(bencher, (252, 256));
 }
 
-#[divan::bench(name = "intersects_interval/gap_middle/int_interval_set")]
+#[divan::bench(name = "intersects_interval/gap_middle/ours")]
 fn intersects_interval_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (260, 264));
 }
@@ -72,7 +72,7 @@ fn intersects_interval_gap_middle_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (260, 264));
 }
 
-#[divan::bench(name = "intersects_interval/hit_middle/int_interval_set")]
+#[divan::bench(name = "intersects_interval/hit_middle/ours")]
 fn intersects_interval_hit_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (257, 259));
 }
@@ -87,7 +87,7 @@ fn intersects_interval_hit_middle_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (257, 259));
 }
 
-#[divan::bench(name = "intersects_interval/span_middle_gap/int_interval_set")]
+#[divan::bench(name = "intersects_interval/span_middle_gap/ours")]
 fn intersects_interval_span_middle_gap_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (258, 266));
 }
@@ -102,7 +102,7 @@ fn intersects_interval_span_middle_gap_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (258, 266));
 }
 
-#[divan::bench(name = "intersects_interval/adjacent_right_last/int_interval_set")]
+#[divan::bench(name = "intersects_interval/adjacent_right_last/ours")]
 fn intersects_interval_adjacent_right_last_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (508, 512));
 }
@@ -117,7 +117,7 @@ fn intersects_interval_adjacent_right_last_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (508, 512));
 }
 
-#[divan::bench(name = "intersects_interval/after_all/int_interval_set")]
+#[divan::bench(name = "intersects_interval/after_all/ours")]
 fn intersects_interval_after_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (520, 528));
 }

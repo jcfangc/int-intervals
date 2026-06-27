@@ -12,7 +12,7 @@ type Bounds = (i32, i32);
 
 const INTERVAL_COUNT: i32 = 64;
 
-#[divan::bench(name = "contains_interval/contained_first/int_interval_set")]
+#[divan::bench(name = "contains_interval/contained_first/ours")]
 fn contains_interval_contained_first_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (2, 10));
 }
@@ -27,7 +27,7 @@ fn contains_interval_contained_first_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (2, 10));
 }
 
-#[divan::bench(name = "contains_interval/contained_middle/int_interval_set")]
+#[divan::bench(name = "contains_interval/contained_middle/ours")]
 fn contains_interval_contained_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (514, 522));
 }
@@ -42,7 +42,7 @@ fn contains_interval_contained_middle_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (514, 522));
 }
 
-#[divan::bench(name = "contains_interval/contained_last/int_interval_set")]
+#[divan::bench(name = "contains_interval/contained_last/ours")]
 fn contains_interval_contained_last_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (1010, 1018));
 }
@@ -57,7 +57,7 @@ fn contains_interval_contained_last_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (1010, 1018));
 }
 
-#[divan::bench(name = "contains_interval/crosses_gap/int_interval_set")]
+#[divan::bench(name = "contains_interval/crosses_gap/ours")]
 fn contains_interval_crosses_gap_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (520, 530));
 }
@@ -72,7 +72,7 @@ fn contains_interval_crosses_gap_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (520, 530));
 }
 
-#[divan::bench(name = "contains_interval/inside_gap/int_interval_set")]
+#[divan::bench(name = "contains_interval/inside_gap/ours")]
 fn contains_interval_inside_gap_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (524, 528));
 }
@@ -87,7 +87,7 @@ fn contains_interval_inside_gap_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (524, 528));
 }
 
-#[divan::bench(name = "contains_interval/outside_right/int_interval_set")]
+#[divan::bench(name = "contains_interval/outside_right/ours")]
 fn contains_interval_outside_right_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (1020, 1028));
 }

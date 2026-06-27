@@ -8,7 +8,7 @@ fn main() {
 
 const BASE: (i8, i8) = (-32, 96);
 
-#[divan::bench(name = "contiguous/equal/int_interval")]
+#[divan::bench(name = "contiguous/equal/ours")]
 fn contiguous_equal_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-32, 96));
 }
@@ -18,7 +18,7 @@ fn contiguous_equal_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-32, 96));
 }
 
-#[divan::bench(name = "contiguous/contained/int_interval")]
+#[divan::bench(name = "contiguous/contained/ours")]
 fn contiguous_contained_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-16, 32));
 }
@@ -28,7 +28,7 @@ fn contiguous_contained_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-16, 32));
 }
 
-#[divan::bench(name = "contiguous/overlap_left/int_interval")]
+#[divan::bench(name = "contiguous/overlap_left/ours")]
 fn contiguous_overlap_left_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-64, 0));
 }
@@ -38,7 +38,7 @@ fn contiguous_overlap_left_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, 0));
 }
 
-#[divan::bench(name = "contiguous/overlap_right/int_interval")]
+#[divan::bench(name = "contiguous/overlap_right/ours")]
 fn contiguous_overlap_right_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (32, 112));
 }
@@ -48,7 +48,7 @@ fn contiguous_overlap_right_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (32, 112));
 }
 
-#[divan::bench(name = "contiguous/adjacent_left/int_interval")]
+#[divan::bench(name = "contiguous/adjacent_left/ours")]
 fn contiguous_adjacent_left_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-64, -32));
 }
@@ -58,7 +58,7 @@ fn contiguous_adjacent_left_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, -32));
 }
 
-#[divan::bench(name = "contiguous/adjacent_right/int_interval")]
+#[divan::bench(name = "contiguous/adjacent_right/ours")]
 fn contiguous_adjacent_right_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (96, 112));
 }
@@ -68,7 +68,7 @@ fn contiguous_adjacent_right_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (96, 112));
 }
 
-#[divan::bench(name = "contiguous/gap_left/int_interval")]
+#[divan::bench(name = "contiguous/gap_left/ours")]
 fn contiguous_gap_left_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (-64, -33));
 }
@@ -78,7 +78,7 @@ fn contiguous_gap_left_rust_intervals(bencher: Bencher) {
     bench_rust_intervals(bencher, (-64, -33));
 }
 
-#[divan::bench(name = "contiguous/gap_right/int_interval")]
+#[divan::bench(name = "contiguous/gap_right/ours")]
 fn contiguous_gap_right_int_interval(bencher: Bencher) {
     bench_int_interval(bencher, (97, 112));
 }

@@ -12,7 +12,7 @@ type Bounds = (i32, i32);
 
 const N: usize = 64;
 
-#[divan::bench(name = "union_with_interval/disjoint_before/int_interval_set")]
+#[divan::bench(name = "union_with_interval/disjoint_before/ours")]
 fn union_with_interval_disjoint_before_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-16, -8));
 }
@@ -27,7 +27,7 @@ fn union_with_interval_disjoint_before_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (-16, -8));
 }
 
-#[divan::bench(name = "union_with_interval/adjacent_before_first/int_interval_set")]
+#[divan::bench(name = "union_with_interval/adjacent_before_first/ours")]
 fn union_with_interval_adjacent_before_first_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-8, 0));
 }
@@ -42,7 +42,7 @@ fn union_with_interval_adjacent_before_first_range_collections(bencher: Bencher)
     bench_range_collections(bencher, (-8, 0));
 }
 
-#[divan::bench(name = "union_with_interval/contained_middle/int_interval_set")]
+#[divan::bench(name = "union_with_interval/contained_middle/ours")]
 fn union_with_interval_contained_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (514, 518));
 }
@@ -57,7 +57,7 @@ fn union_with_interval_contained_middle_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (514, 518));
 }
 
-#[divan::bench(name = "union_with_interval/bridge_middle_gap/int_interval_set")]
+#[divan::bench(name = "union_with_interval/bridge_middle_gap/ours")]
 fn union_with_interval_bridge_middle_gap_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (504, 512));
 }
@@ -72,7 +72,7 @@ fn union_with_interval_bridge_middle_gap_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (504, 512));
 }
 
-#[divan::bench(name = "union_with_interval/bridge_many_middle/int_interval_set")]
+#[divan::bench(name = "union_with_interval/bridge_many_middle/ours")]
 fn union_with_interval_bridge_many_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (498, 566));
 }

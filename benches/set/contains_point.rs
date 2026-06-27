@@ -12,7 +12,7 @@ type Bounds = (i32, i32);
 
 const N: usize = 64;
 
-#[divan::bench(name = "contains_point/hit_first/int_interval_set")]
+#[divan::bench(name = "contains_point/hit_first/ours")]
 fn contains_point_hit_first_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 1);
 }
@@ -27,7 +27,7 @@ fn contains_point_hit_first_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, 1);
 }
 
-#[divan::bench(name = "contains_point/gap_first/int_interval_set")]
+#[divan::bench(name = "contains_point/gap_first/ours")]
 fn contains_point_gap_first_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 2);
 }
@@ -42,7 +42,7 @@ fn contains_point_gap_first_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, 2);
 }
 
-#[divan::bench(name = "contains_point/hit_middle/int_interval_set")]
+#[divan::bench(name = "contains_point/hit_middle/ours")]
 fn contains_point_hit_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 129);
 }
@@ -57,7 +57,7 @@ fn contains_point_hit_middle_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, 129);
 }
 
-#[divan::bench(name = "contains_point/gap_middle/int_interval_set")]
+#[divan::bench(name = "contains_point/gap_middle/ours")]
 fn contains_point_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 130);
 }
@@ -72,7 +72,7 @@ fn contains_point_gap_middle_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, 130);
 }
 
-#[divan::bench(name = "contains_point/hit_last/int_interval_set")]
+#[divan::bench(name = "contains_point/hit_last/ours")]
 fn contains_point_hit_last_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 253);
 }
@@ -87,7 +87,7 @@ fn contains_point_hit_last_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, 253);
 }
 
-#[divan::bench(name = "contains_point/gap_last/int_interval_set")]
+#[divan::bench(name = "contains_point/gap_last/ours")]
 fn contains_point_gap_last_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 254);
 }
@@ -102,7 +102,7 @@ fn contains_point_gap_last_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, 254);
 }
 
-#[divan::bench(name = "contains_point/before_all/int_interval_set")]
+#[divan::bench(name = "contains_point/before_all/ours")]
 fn contains_point_before_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, -1);
 }
@@ -117,7 +117,7 @@ fn contains_point_before_all_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, -1);
 }
 
-#[divan::bench(name = "contains_point/after_all/int_interval_set")]
+#[divan::bench(name = "contains_point/after_all/ours")]
 fn contains_point_after_all_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, 256);
 }

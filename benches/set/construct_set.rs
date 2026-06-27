@@ -11,7 +11,7 @@ type Bounds = (i32, i32);
 
 const N: usize = 64;
 
-#[divan::bench(name = "construct/sorted_disjoint_64/int_interval_set")]
+#[divan::bench(name = "construct/sorted_disjoint_64/ours")]
 fn construct_sorted_disjoint_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &sorted_disjoint());
 }
@@ -21,7 +21,7 @@ fn construct_sorted_disjoint_64_range_set_blaze(bencher: Bencher) {
     bench_range_set_blaze(bencher, &sorted_disjoint());
 }
 
-#[divan::bench(name = "construct/reversed_disjoint_64/int_interval_set")]
+#[divan::bench(name = "construct/reversed_disjoint_64/ours")]
 fn construct_reversed_disjoint_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &reversed_disjoint());
 }
@@ -31,7 +31,7 @@ fn construct_reversed_disjoint_64_range_set_blaze(bencher: Bencher) {
     bench_range_set_blaze(bencher, &reversed_disjoint());
 }
 
-#[divan::bench(name = "construct/adjacent_chain_64/int_interval_set")]
+#[divan::bench(name = "construct/adjacent_chain_64/ours")]
 fn construct_adjacent_chain_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &adjacent_chain());
 }
@@ -41,7 +41,7 @@ fn construct_adjacent_chain_64_range_set_blaze(bencher: Bencher) {
     bench_range_set_blaze(bencher, &adjacent_chain());
 }
 
-#[divan::bench(name = "construct/mixed_unsorted_64/int_interval_set")]
+#[divan::bench(name = "construct/mixed_unsorted_64/ours")]
 fn construct_mixed_unsorted_64_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, &mixed_unsorted());
 }

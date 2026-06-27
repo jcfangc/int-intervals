@@ -14,7 +14,7 @@ const N: usize = 64;
 const STRIDE: i32 = 8;
 const WIDTH: i32 = 4;
 
-#[divan::bench(name = "difference_with_interval/disjoint_before/int_interval_set")]
+#[divan::bench(name = "difference_with_interval/disjoint_before/ours")]
 fn difference_with_interval_disjoint_before_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (-16, -8));
 }
@@ -29,7 +29,7 @@ fn difference_with_interval_disjoint_before_range_collections(bencher: Bencher) 
     bench_range_collections(bencher, (-16, -8));
 }
 
-#[divan::bench(name = "difference_with_interval/disjoint_gap_middle/int_interval_set")]
+#[divan::bench(name = "difference_with_interval/disjoint_gap_middle/ours")]
 fn difference_with_interval_disjoint_gap_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (260, 264));
 }
@@ -44,7 +44,7 @@ fn difference_with_interval_disjoint_gap_middle_range_collections(bencher: Bench
     bench_range_collections(bencher, (260, 264));
 }
 
-#[divan::bench(name = "difference_with_interval/remove_first_exact/int_interval_set")]
+#[divan::bench(name = "difference_with_interval/remove_first_exact/ours")]
 fn difference_with_interval_remove_first_exact_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (0, 4));
 }
@@ -59,7 +59,7 @@ fn difference_with_interval_remove_first_exact_range_collections(bencher: Benche
     bench_range_collections(bencher, (0, 4));
 }
 
-#[divan::bench(name = "difference_with_interval/trim_middle_left/int_interval_set")]
+#[divan::bench(name = "difference_with_interval/trim_middle_left/ours")]
 fn difference_with_interval_trim_middle_left_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (256, 258));
 }
@@ -74,7 +74,7 @@ fn difference_with_interval_trim_middle_left_range_collections(bencher: Bencher)
     bench_range_collections(bencher, (256, 258));
 }
 
-#[divan::bench(name = "difference_with_interval/split_middle/int_interval_set")]
+#[divan::bench(name = "difference_with_interval/split_middle/ours")]
 fn difference_with_interval_split_middle_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (257, 259));
 }
@@ -89,7 +89,7 @@ fn difference_with_interval_split_middle_range_collections(bencher: Bencher) {
     bench_range_collections(bencher, (257, 259));
 }
 
-#[divan::bench(name = "difference_with_interval/remove_middle_span/int_interval_set")]
+#[divan::bench(name = "difference_with_interval/remove_middle_span/ours")]
 fn difference_with_interval_remove_middle_span_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (16 * STRIDE, 48 * STRIDE));
 }
@@ -104,7 +104,7 @@ fn difference_with_interval_remove_middle_span_range_collections(bencher: Benche
     bench_range_collections(bencher, (16 * STRIDE, 48 * STRIDE));
 }
 
-#[divan::bench(name = "difference_with_interval/clip_middle_span/int_interval_set")]
+#[divan::bench(name = "difference_with_interval/clip_middle_span/ours")]
 fn difference_with_interval_clip_middle_span_int_interval_set(bencher: Bencher) {
     bench_int_interval_set(bencher, (16 * STRIDE + 2, 48 * STRIDE + 2));
 }

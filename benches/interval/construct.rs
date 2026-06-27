@@ -8,7 +8,7 @@ fn main() {
 
 const VALID: (i8, i8) = (-32, 96);
 
-#[divan::bench(name = "construct/valid_closed_open/int_interval")]
+#[divan::bench(name = "construct/valid_closed_open/ours")]
 fn construct_valid_closed_open_int_interval(bencher: Bencher) {
     bencher.bench(|| {
         let (start, end_excl) = black_box(VALID);
