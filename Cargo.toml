@@ -11,6 +11,10 @@ repository = "https://github.com/jcfangc/int-intervals"
 readme = "README.md"
 keywords = ["interval", "set", "stack", "no_std", "integer"]
 categories = ["data-structures", "no-std"]
+
+[package.metadata.rust-analyzer]
+cargo = { features = ["stack", "parallel"] }
+
 exclude = [
     "/benches",
     "src/**/tests_for_*.rs",
