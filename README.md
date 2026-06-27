@@ -18,9 +18,9 @@ This crate consolidates and supersedes three previously independent crates:
 
 | Predecessor | Final version | Merged into |
 |------------|--------------|-------------|
-| [`int-interval`][] | 0.9.6 | `int_intervals::interval` (always available) |
-| [`int-interval-set`][] | 0.3.4 | `int_intervals::set` (feature `"set"`) |
-| [`int-interval-stack`][] | 0.3.1 | `int_intervals::stack` (feature `"stack"`) |
+| [`int-interval`][] | 0.9.7 | `int_intervals::interval` (always available) |
+| [`int-interval-set`][] | 0.3.5 | `int_intervals::set` (feature `"set"`) |
+| [`int-interval-stack`][] | 0.3.2 | `int_intervals::stack` (feature `"stack"`) |
 
 The three crates formed a dependency chain — `stack` depended on `set`, which
 depended on `interval`. Maintaining them separately meant synchronising versions,
