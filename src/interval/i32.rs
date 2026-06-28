@@ -753,10 +753,26 @@ pub mod minkowski {
                     return None;
                 }
 
-                let a = self.start / other.start;
-                let b = self.start / other.end_incl();
-                let c = self.end_incl() / other.start;
-                let d = self.end_incl() / other.end_incl();
+                // Mimic saturating division: MIN / -1 overflows to MAX+1,
+                // so clamp to MAX. checked_div returns None only for that case.
+                // Use a match rather than unwrap_or because the latter is not
+                // yet const-stable.
+                let a = match self.start.checked_div(other.start) {
+                    Some(x) => x,
+                    None => i32::MAX,
+                };
+                let b = match self.start.checked_div(other.end_incl()) {
+                    Some(x) => x,
+                    None => i32::MAX,
+                };
+                let c = match self.end_incl().checked_div(other.start) {
+                    Some(x) => x,
+                    None => i32::MAX,
+                };
+                let d = match self.end_incl().checked_div(other.end_incl()) {
+                    Some(x) => x,
+                    None => i32::MAX,
+                };
 
                 let (start, end_incl) = min_max4(a, b, c, d);
 
@@ -797,8 +813,18 @@ pub mod minkowski {
                     return None;
                 }
 
-                let a = self.start / n;
-                let b = self.end_incl() / n;
+                // Mimic saturating division: MIN / -1 overflows to MAX+1,
+                // so clamp to MAX. checked_div returns None only for that case.
+                // Use a match rather than unwrap_or because the latter is not
+                // yet const-stable.
+                let a = match self.start.checked_div(n) {
+                    Some(x) => x,
+                    None => i32::MAX,
+                };
+                let b = match self.end_incl().checked_div(n) {
+                    Some(x) => x,
+                    None => i32::MAX,
+                };
 
                 let (start, end_incl) = min_max2(a, b);
 

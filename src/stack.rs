@@ -13,3 +13,6 @@ pub use height_segment::HeightSegment;
 pub use height_stats::HeightStats;
 pub use int_co_stack::IntCOStack;
 pub use stack_window::StackWindow;
+
+#[cfg(test)]
+mod tests_for_adversarial;

@@ -1,5 +1,7 @@
 #[cfg(test)]
 mod test_support;
+#[cfg(test)]
+mod tests_for_adversarial;
 
 pub(crate) use alloc::sync::Arc;
 
